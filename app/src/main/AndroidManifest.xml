@@ -26,12 +26,29 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
+<<<<<<< HEAD
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
 
+=======
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name">
+
+>>>>>>> 278d77bfc58ae2e0cdb69e1531fe529674eb8a8a
         </activity>
     </application>
 
