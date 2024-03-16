@@ -1,9 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistroActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/textView"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="REGISTRARME"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/rptNombres"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Nombres"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptPalabraClave"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Palabra clave"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/rptCorreo"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptCorreo"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/rptNombres"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="25dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="125dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:srcCompat="@mipmap/fotoregistro_joseph" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Datos de la Cuenta:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/rptApellidos"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Apellidos"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptDNI"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="DNI"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/rptCorreo"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptCelular"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Celular"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/rptDNI"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Datos fisiométricos del Usuario:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/rptCelular"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/orange_special"
+            android:text="Registrar"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/rptPeso"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/rptPassword"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/rptApellidos"
+            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptFechaNac"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Fecha Nac."
+            android:inputType="date"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/rptPalabraClave"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptAltura"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Altura"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/rptPeso"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/orange_special"
+            android:ems="10"
+            android:hint="Peso"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
