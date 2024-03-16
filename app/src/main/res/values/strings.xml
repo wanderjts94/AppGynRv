@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AppGynRv</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Ejercicio">EJERCICIOS</string>
+    <string name="Informe">INFORME</string>
+    <string name="Tienda">TIENDA</string>
+    <string name="Perfil">PERFIL</string>
+    <string name="subtitP">Datos Del Usuario</string>
+    <string name="etNom">Nombres</string>
+    <string name="etDNI">DNI</string>
+    <string name="etCorreo">CORREO</string>
+    <string name="ape">Apellidos</string>
+    <string name="etd">DNI</string>
+    <string name="etyce">Celular</string>
+    <string name="etcorre">Correo</string>
+    <string name="etcell">Celular</string>
+    <string name="etalt">Altura</string>
+    <string name="etpesoo">Peso</string>
+    <string name="etFech">Fecha Nac.</string>
+    <string name="btnvip">Haste Premiun</string>
+    <string name="btnG">Guardar</string>
+</resources>

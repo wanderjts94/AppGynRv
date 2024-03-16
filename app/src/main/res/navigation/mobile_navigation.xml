@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/ejercicioFragment">
+    <fragment
+        android:id="@+id/ejercicioFragment"
+        android:name="pe.edu.idat.appgynrv.EjercicioFragment"
+        android:label="@string/Ejercicio"
+        tools:layout="@layout/fragment_ejercicio" />
+    <fragment
+        android:id="@+id/informeFragment"
+        android:name="pe.edu.idat.appgynrv.InformeFragment"
+        android:label="@string/Informe"
+        tools:layout="@layout/fragment_informe" />
+    <fragment
+        android:id="@+id/tiendaFragment"
+        android:name="pe.edu.idat.appgynrv.TiendaFragment"
+        android:label="@string/Tienda"
+        tools:layout="@layout/fragment_tienda" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="pe.edu.idat.appgynrv.PerfilFragment"
+        android:label="@string/Perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>

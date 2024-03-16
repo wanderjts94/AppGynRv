@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ba"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".PerfilFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/etSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/subtitP"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Plain text para Nombre -->
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="146dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="44dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etNom"
+            android:textColor="@color/white"
+            android:textColorHint="#F0FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etSub"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Plain text para Apellido -->
+        <EditText
+            android:id="@+id/etApellido"
+            android:layout_width="135dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:background="#E4EC832E"
+            android:hint="@string/ape"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/etNombre"
+            app:layout_constraintTop_toTopOf="@id/etNombre"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/etDNI"
+            android:layout_width="146dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="44dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etDNI"
+            android:textColor="@color/white"
+            android:textColorHint="#F0FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNombre"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Plain text para coreo -->
+        <EditText
+            android:id="@+id/etCorreo"
+            android:layout_width="135dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etcorre"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/etDNI"
+            app:layout_constraintTop_toTopOf="@id/etDNI"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+
+        <EditText
+            android:id="@+id/etcelular"
+            android:layout_width="146dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="44dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etcell"
+            android:numeric="integer"
+            android:textColor="@color/white"
+            android:textColorHint="#F0FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDNI"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Plain text para coreo -->
+        <EditText
+            android:id="@+id/etaltura"
+            android:layout_width="135dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etalt"
+            android:numeric="decimal"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/etcelular"
+            app:layout_constraintTop_toTopOf="@id/etcelular"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/etPes"
+            android:layout_width="146dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="44dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etpesoo"
+            android:numeric="decimal"
+            android:textColor="@color/white"
+            android:textColorHint="#F0FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etcelular"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Plain text para coreo -->
+        <EditText
+            android:id="@+id/etFecha"
+            android:layout_width="135dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:background="#E4EC832E"
+            android:hint="@string/etFech"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/etPes"
+            app:layout_constraintTop_toTopOf="@id/etPes"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btnVip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/btnvip"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPes" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/btnG"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnVip" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
