@@ -81,12 +81,13 @@
                 android:textStyle="bold"/>
 
             <EditText
+                android:id="@+id/etcorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:alpha="0.7"
                 android:drawableEnd="@drawable/baseline_check_24"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/white"
-                android:alpha="0.7"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <View
@@ -102,12 +103,13 @@
                 android:textStyle="bold"/>
 
             <EditText
+                android:id="@+id/etpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:alpha="0.7"
                 android:drawableEnd="@drawable/baseline_remove_red_eye_24"
                 android:inputType="textPassword"
                 android:textColor="@color/white"
-                android:alpha="0.7"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <View
@@ -115,28 +117,30 @@
                 android:layout_height="15dp"/>
 
             <TextView
+                android:id="@+id/tvlrecuperacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:alpha="0.7"
                 android:gravity="center"
                 android:text="Olvidé mi contraseña"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="5dp"/>
 
             <TextView
+                android:id="@+id/tvlregistro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:alpha="0.7"
                 android:gravity="center"
                 android:text="Crear una cuenta"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:textStyle="bold" />
 
 
             <View
@@ -144,10 +148,11 @@
                 android:layout_height="15dp"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnlogin"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="LOGIN"
-                app:cornerRadius="32dp"/>
+                app:cornerRadius="32dp" />
 
             <View
                 android:layout_width="wrap_content"
