@@ -23,4 +23,7 @@
     <string name="etFech">Fecha Nac.</string>
     <string name="btnvip">Haste Premiun</string>
     <string name="btnG">Guardar</string>
+    <string name="prueba1">IngreseCorreo</string>
+    <string name="prueba2">Ingrese Contraseña</string>
+    <string name="prueba3">Ingresar</string>
 </resources>
