@@ -28,42 +28,46 @@
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="20dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Nombres"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
             android:id="@+id/rptPalabraClave"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Palabra clave"
             android:inputType="text"
             android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptCorreo"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/rptCorreo" />
 
         <EditText
             android:id="@+id/rptCorreo"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@color/orange_special"
+            android:alpha="0.7"
+            android:drawableEnd="@drawable/baseline_check_24"
+            android:inputType="textEmailAddress"
             android:ems="10"
             android:hint="Correo"
-            android:inputType="text"
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:textColorHint="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptNombres"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/rptNombres" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -105,42 +109,45 @@
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="20dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Apellidos"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:inputType="text"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
             android:id="@+id/rptDNI"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@color/orange_special"
             android:ems="10"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:hint="DNI"
             android:inputType="text"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/rptCorreo"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/rptCorreo" />
 
         <EditText
             android:id="@+id/rptCelular"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Celular"
-            android:inputType="text"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:textColorHint="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptDNI"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/rptDNI" />
 
         <TextView
             android:id="@+id/textView3"
@@ -174,56 +181,60 @@
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/rptApellidos"
-            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/rptApellidos" />
 
         <EditText
             android:id="@+id/rptFechaNac"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Fecha Nac."
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:inputType="date"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/rptPalabraClave"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/rptPalabraClave" />
 
         <EditText
             android:id="@+id/rptAltura"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="30dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Altura"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:inputType="numberDecimal"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
             android:id="@+id/rptPeso"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:layout_marginTop="30dp"
-            android:background="@color/orange_special"
             android:ems="10"
             android:hint="Peso"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
             android:inputType="numberDecimal"
             android:textColorHint="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
