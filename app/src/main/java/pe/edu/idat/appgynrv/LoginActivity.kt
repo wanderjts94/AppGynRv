@@ -1,8 +1,9 @@
 package pe.edu.idat.appgynrv
 
-
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import pe.edu.idat.appgynrv.databinding.ActivityLoginBinding
@@ -14,9 +15,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import pe.edu.idat.appgynrv.Retrofit.models.LoginRequest
 import pe.edu.idat.appgynrv.Retrofit.models.LoginResponse
 import pe.edu.idat.appgynrv.Retrofit.services.loginservice
-
+import java.net.Inet4Address
+import java.net.NetworkInterface
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +27,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configuración de Retrofit
+        val baseUrl = "http://192.168.1.40:9090/api/usuarios/"
+
+        Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
+            .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -55,8 +60,10 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    Toast.makeText(this@LoginActivity, "Error en la comunicación con el servidor", Toast.LENGTH_SHORT).show()
-                    // Limpiar los cuadros de texto
+                    Toast.makeText(this@LoginActivity, "Error en la comunicación con el servidor"
+                            + t.message, Toast.LENGTH_SHORT).show()
+                    Log.i("Error en el servidor",t.stackTraceToString())
+
                     binding.etcorreo.text.clear()
                     binding.etpassword.text.clear()
                 }
