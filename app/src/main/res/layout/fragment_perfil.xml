@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:background="@color/black"
             android:text="@string/subtitP"
-            android:textColor="@color/white"
+            android:textColor="@color/orange_special"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -24,14 +24,16 @@
         <!-- Plain text para Nombre -->
         <EditText
             android:id="@+id/etNombre"
-            android:layout_width="146dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="44dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etNom"
             android:textColor="@color/white"
+            android:textColorHighlight="#FF5722"
             android:textColorHint="#F0FFFFFF"
+            android:textColorLink="#03A9F4"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etSub"
@@ -40,10 +42,10 @@
         <!-- Plain text para Apellido -->
         <EditText
             android:id="@+id/etApellido"
-            android:layout_width="135dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="16dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/ape"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
@@ -54,11 +56,11 @@
 
         <EditText
             android:id="@+id/etDNI"
-            android:layout_width="146dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="44dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etDNI"
             android:textColor="@color/white"
             android:textColorHint="#F0FFFFFF"
@@ -70,10 +72,10 @@
         <!-- Plain text para coreo -->
         <EditText
             android:id="@+id/etCorreo"
-            android:layout_width="135dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="16dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etcorre"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
@@ -85,11 +87,11 @@
 
         <EditText
             android:id="@+id/etcelular"
-            android:layout_width="146dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="44dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etcell"
             android:numeric="integer"
             android:textColor="@color/white"
@@ -102,10 +104,10 @@
         <!-- Plain text para coreo -->
         <EditText
             android:id="@+id/etaltura"
-            android:layout_width="135dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="16dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etalt"
             android:numeric="decimal"
             android:textColor="@color/white"
@@ -117,11 +119,11 @@
 
         <EditText
             android:id="@+id/etPes"
-            android:layout_width="146dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="44dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etpesoo"
             android:numeric="decimal"
             android:textColor="@color/white"
@@ -134,10 +136,10 @@
         <!-- Plain text para coreo -->
         <EditText
             android:id="@+id/etFecha"
-            android:layout_width="135dp"
+            android:layout_width="160dp"
             android:layout_height="44dp"
             android:layout_marginStart="16dp"
-            android:background="#E4EC832E"
+            android:background="@color/black"
             android:hint="@string/etFech"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
@@ -155,22 +157,49 @@
             android:layout_marginEnd="40dp"
             android:text="@string/btnvip"
             android:textSize="20sp"
+            app:cornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPes" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="80dp"
             android:text="@string/btnG"
             android:textSize="20sp"
+            app:cornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnVip" />
+
+        <ImageButton
+            android:id="@+id/btnBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/purple_500"
+            android:contentDescription="@string/btbucar"
+            android:src="@android:drawable/ic_menu_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPes" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/textb"
+            android:textColor="@color/orange_special"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

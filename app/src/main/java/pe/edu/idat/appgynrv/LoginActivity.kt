@@ -37,6 +37,18 @@ class LoginActivity : AppCompatActivity() {
 
         val service = retrofit.create(loginservice::class.java)
 
+        // Set click listener for tvlrecuperacion
+        binding.tvlrecuperacion.setOnClickListener {
+            val intent = Intent(this, RecuperacionActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Set click listener for tvlregistro
+        binding.tvlregistro.setOnClickListener {
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnlogin.setOnClickListener {
             val correo = binding.etcorreo.text.toString()
             val password = binding.etpassword.text.toString()
@@ -69,5 +81,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
         }
+
+
+ 
     }
 }
