@@ -2,6 +2,6 @@ package pe.edu.idat.appgynrv.Retrofit.models
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse(
+data class putRecuperarResponse(
     @SerializedName("mensaje") val mensaje: String
 )

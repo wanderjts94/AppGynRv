@@ -26,4 +26,10 @@
     <string name="prueba1">IngreseCorreo</string>
     <string name="prueba2">Ingrese Contraseña</string>
     <string name="prueba3">Ingresar</string>
+    <string name="textb">Busca tus datos</string>
+    <string name="btbucar">BUSCAR</string>
+    <string name="etcor">Ingrese su correo</string>
+    <string name="etclav">Ingrese Palabra Clave</string>
+    <string name="etnuevcontra">Ingrese Nueva Contraseña</string>
+    <string name="btcambios">GUARDAR</string>
 </resources>
