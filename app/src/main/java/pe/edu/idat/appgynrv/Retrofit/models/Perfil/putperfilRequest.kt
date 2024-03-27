@@ -1,4 +1,4 @@
-package pe.edu.idat.appgynrv.Retrofit.models
+package pe.edu.idat.appgynrv.Retrofit.models.Perfil
 
 import com.google.gson.annotations.SerializedName
 
@@ -9,5 +9,6 @@ data class putperfilRequest(
     @SerializedName("numCelular") val numCelular: String,
     @SerializedName("altura") val altura: Double,
     @SerializedName("peso") val peso: Double,
-    @SerializedName("fechaNacimiento") val fechaNacimiento: String
+    @SerializedName("fechaNacimiento") val fechaNacimiento: String,
+    @SerializedName("palabraClave") val palabraClave: String
 )

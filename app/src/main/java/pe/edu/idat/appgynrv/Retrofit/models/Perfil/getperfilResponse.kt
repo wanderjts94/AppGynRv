@@ -1,4 +1,4 @@
-package pe.edu.idat.appgynrv.Retrofit.models
+package pe.edu.idat.appgynrv.Retrofit.models.Perfil
 
 data class getperfilResponse(
     val correo: String,
@@ -8,5 +8,6 @@ data class getperfilResponse(
     val numCelular: String,
     val altura: Double,
     val peso: Double,
-    val fechaNacimiento: String
+    val fechaNacimiento: String,
+    val palabraClave: String
 )

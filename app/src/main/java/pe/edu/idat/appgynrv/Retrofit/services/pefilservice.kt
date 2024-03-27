@@ -1,8 +1,8 @@
 package pe.edu.idat.appgynrv.Retrofit.services
 
-import pe.edu.idat.appgynrv.Retrofit.models.getperfilResponse
-import pe.edu.idat.appgynrv.Retrofit.models.putperfilRequest
-import pe.edu.idat.appgynrv.Retrofit.models.putperfilResponse
+import pe.edu.idat.appgynrv.Retrofit.models.Perfil.getperfilResponse
+import pe.edu.idat.appgynrv.Retrofit.models.Perfil.putperfilRequest
+import pe.edu.idat.appgynrv.Retrofit.models.Perfil.putperfilResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

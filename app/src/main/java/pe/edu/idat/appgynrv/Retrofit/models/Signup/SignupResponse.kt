@@ -1,4 +1,4 @@
-package pe.edu.idat.appgynrv.Retrofit.models
+package pe.edu.idat.appgynrv.Retrofit.models.Signup
 
 import com.google.gson.annotations.SerializedName
 

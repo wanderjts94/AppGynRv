@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import pe.edu.idat.appgynrv.Retrofit.models.putRecuperarRequest
-import pe.edu.idat.appgynrv.Retrofit.models.putRecuperarResponse
+import pe.edu.idat.appgynrv.Retrofit.models.Recuperacion.putRecuperarRequest
+import pe.edu.idat.appgynrv.Retrofit.models.Recuperacion.putRecuperarResponse
 import pe.edu.idat.appgynrv.Retrofit.services.recuperarservice
 import pe.edu.idat.appgynrv.databinding.ActivityRecuperacionBinding
 import retrofit2.Call
@@ -25,7 +25,7 @@ class RecuperacionActivity : AppCompatActivity() {
 
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.21:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.40:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
