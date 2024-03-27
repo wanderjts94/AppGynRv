@@ -1,6 +1,5 @@
 package pe.edu.idat.appgynrv
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,11 +11,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import pe.edu.idat.appgynrv.Retrofit.models.LoginRequest
-import pe.edu.idat.appgynrv.Retrofit.models.LoginResponse
+import pe.edu.idat.appgynrv.Retrofit.models.Login.LoginRequest
+import pe.edu.idat.appgynrv.Retrofit.models.Login.LoginResponse
 import pe.edu.idat.appgynrv.Retrofit.services.loginservice
-import java.net.Inet4Address
-import java.net.NetworkInterface
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val baseUrl = "http://192.168.1.21:9090/api/usuarios/"
+        val baseUrl = "http://192.168.1.40:9090/api/usuarios/"
 
         Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
         val retrofit = Retrofit.Builder()
@@ -60,14 +57,24 @@ class LoginActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val mensaje = response.body()?.mensaje ?: "Respuesta vacía del servidor"
                         Toast.makeText(this@LoginActivity, mensaje, Toast.LENGTH_SHORT).show()
+
+                        // Almacenar el correo electrónico en SharedPreferences
+                        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putString("correo", correo) // Almacena el correo electrónico
+                        editor.apply()
+                        Log.i("Correo Ingresado",correo)
+                        Log.i("Datos de editor", editor.toString())
+                        Log.i("Dats de SharedPreferences", sharedPreferences.toString())
+
                         // Redireccionar a MainActivity
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
                         Toast.makeText(this@LoginActivity, "Las Credenciales son Invalidas", Toast.LENGTH_SHORT).show()
-                        val correo = binding.etcorreo.text?.toString() ?: ""
-                        val password = binding.etpassword.text?.toString() ?: ""
+                        binding.etcorreo.text!!.clear()
+                        binding.etpassword.text!!.clear()
                     }
                 }
 
@@ -75,14 +82,8 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this@LoginActivity, "Error en la comunicación con el servidor"
                             + t.message, Toast.LENGTH_SHORT).show()
                     Log.i("Error en el servidor",t.stackTraceToString())
-
-                    val correo = binding.etcorreo.text?.toString() ?: ""
-                    val password = binding.etpassword.text?.toString() ?: ""
                 }
             })
         }
-
-
-
     }
 }

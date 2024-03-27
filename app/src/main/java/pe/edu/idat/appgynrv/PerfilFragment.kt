@@ -1,14 +1,16 @@
 package pe.edu.idat.appgynrv
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import pe.edu.idat.appgynrv.Retrofit.models.getperfilResponse
-import pe.edu.idat.appgynrv.Retrofit.models.putperfilRequest
-import pe.edu.idat.appgynrv.Retrofit.models.putperfilResponse
+import androidx.appcompat.app.AppCompatActivity
+import pe.edu.idat.appgynrv.Retrofit.models.Perfil.getperfilResponse
+import pe.edu.idat.appgynrv.Retrofit.models.Perfil.putperfilRequest
+import pe.edu.idat.appgynrv.Retrofit.models.Perfil.putperfilResponse
 import pe.edu.idat.appgynrv.Retrofit.services.pefilservice
 import pe.edu.idat.appgynrv.databinding.FragmentPerfilBinding
 import retrofit2.Call
@@ -25,7 +27,7 @@ class PerfilFragment : Fragment() {
     init {
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.21:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.40:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -38,6 +40,16 @@ class PerfilFragment : Fragment() {
     ): View? {
         binding = FragmentPerfilBinding.inflate(inflater, container, false)
 
+        // Obtener el correo electrónico almacenado en SharedPreferences
+        val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", AppCompatActivity.MODE_PRIVATE)
+        val correo = sharedPreferences.getString("correo", "")
+        Log.i("Correo Cargado en Perfil", correo.toString())
+
+        // Si hay un correo electrónico almacenado, cargar automáticamente los datos del perfil
+        if (!correo.isNullOrEmpty()) {
+            obtenerPerfilPorCorreo(correo)
+            Log.i("Perfil Obtenido por Correo",obtenerPerfilPorCorreo(correo).toString())
+        }
 
         binding.btnGuardar.setOnClickListener {
             val correo = binding.etCorreo.text.toString()
@@ -69,6 +81,7 @@ class PerfilFragment : Fragment() {
     }
 
     private fun actualizarDatosPerfil(perfil: getperfilResponse) {
+        binding.etCorreo.setText(perfil.correo)
         binding.etNombre.setText(perfil.nombreUsuario)
         binding.etApellido.setText(perfil.apellidoUsuario)
         binding.etDNI.setText(perfil.dni)
@@ -76,6 +89,7 @@ class PerfilFragment : Fragment() {
         binding.etaltura.setText(perfil.altura.toString())
         binding.etPes.setText(perfil.peso.toString())
         binding.etFecha.setText(perfil.fechaNacimiento)
+        binding.etpalabrac.setText(perfil.palabraClave)
     }
 
     private fun actualizarPerfil(correo: String) {
@@ -86,8 +100,9 @@ class PerfilFragment : Fragment() {
         val altura = binding.etaltura.text.toString().toDouble()
         val peso = binding.etPes.text.toString().toDouble()
         val fechaNacimiento = binding.etFecha.text.toString()
+        val palabraClave = binding.etpalabrac.text.toString()
 
-        val request = putperfilRequest(nombre, apellido, dni, celular, altura, peso, fechaNacimiento)
+        val request = putperfilRequest(nombre, apellido, dni, celular, altura, peso, fechaNacimiento, palabraClave)
 
         val call = perfilService.actualizarPerfil(correo, request)
         call.enqueue(object : Callback<putperfilResponse> {

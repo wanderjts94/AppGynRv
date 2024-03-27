@@ -1,13 +1,12 @@
 package pe.edu.idat.appgynrv
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import pe.edu.idat.appgynrv.Retrofit.models.SignupRequest
-import pe.edu.idat.appgynrv.Retrofit.models.SignupResponse
+import pe.edu.idat.appgynrv.Retrofit.models.Signup.SignupRequest
+import pe.edu.idat.appgynrv.Retrofit.models.Signup.SignupResponse
 import pe.edu.idat.appgynrv.Retrofit.services.loginservice
 import pe.edu.idat.appgynrv.databinding.ActivityRegistroBinding
 import retrofit2.Call
@@ -15,8 +14,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.net.Inet4Address
-import java.net.NetworkInterface
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -28,7 +25,7 @@ class RegistroActivity : AppCompatActivity() {
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val baseUrl = "http://192.168.1.21:9090/api/usuarios/"
+        val baseUrl = "http://192.168.1.40:9090/api/usuarios/"
 
         Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
         val retrofit = Retrofit.Builder()
