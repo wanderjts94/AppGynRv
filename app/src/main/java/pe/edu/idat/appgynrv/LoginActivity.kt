@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val baseUrl = "http://192.168.1.40:9090/api/usuarios/"
+        val baseUrl = "http://192.168.1.21:9090/api/usuarios/"
 
         Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
         val retrofit = Retrofit.Builder()
@@ -66,8 +66,8 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                     } else {
                         Toast.makeText(this@LoginActivity, "Las Credenciales son Invalidas", Toast.LENGTH_SHORT).show()
-                        binding.etcorreo.text.clear()
-                        binding.etpassword.text.clear()
+                        val correo = binding.etcorreo.text?.toString() ?: ""
+                        val password = binding.etpassword.text?.toString() ?: ""
                     }
                 }
 
@@ -76,13 +76,13 @@ class LoginActivity : AppCompatActivity() {
                             + t.message, Toast.LENGTH_SHORT).show()
                     Log.i("Error en el servidor",t.stackTraceToString())
 
-                    binding.etcorreo.text.clear()
-                    binding.etpassword.text.clear()
+                    val correo = binding.etcorreo.text?.toString() ?: ""
+                    val password = binding.etpassword.text?.toString() ?: ""
                 }
             })
         }
 
 
- 
+
     }
 }

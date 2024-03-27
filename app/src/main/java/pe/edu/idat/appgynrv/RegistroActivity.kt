@@ -28,7 +28,7 @@ class RegistroActivity : AppCompatActivity() {
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val baseUrl = "http://192.168.1.40:9090/api/usuarios/"
+        val baseUrl = "http://192.168.1.21:9090/api/usuarios/"
 
         Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
         val retrofit = Retrofit.Builder()
@@ -89,15 +89,17 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun clearTEXT(){
-        binding.rptNombres.text.clear()
-        binding.rptApellidos.text.clear()
-        binding.rptCorreo.text.clear()
-        binding.rptPassword.text.clear()
-        binding.rptPalabraClave.text.clear()
-        binding.rptDNI.text.clear()
-        binding.rptCelular.text.clear()
-        binding.rptFechaNac.text.clear()
-        binding.rptPeso.text.clear()
-        binding.rptAltura.text.clear()
+
+        val nombres = binding.rptNombres.text?.toString() ?: ""
+        val apellidos = binding.rptApellidos.text?.toString() ?: ""
+        val correo = binding.rptCorreo.text?.toString() ?: ""
+        val contrasena = binding.rptPassword.text?.toString() ?: ""
+        val palabraclave = binding.rptPalabraClave.text?.toString() ?: ""
+        val dni = binding.rptDNI.text?.toString() ?: ""
+        val celular = binding.rptCelular.text?.toString() ?: ""
+        val fechanac = binding.rptFechaNac.text?.toString() ?: ""
+        val peso = binding.rptPeso.text?.toString() ?: ""
+        val altura = binding.rptAltura.text?.toString() ?: ""
+
     }
 }
