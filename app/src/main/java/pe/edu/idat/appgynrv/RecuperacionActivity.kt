@@ -25,9 +25,15 @@ class RecuperacionActivity : AppCompatActivity() {
 
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.21:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
+        // Set click listener for tvlrecuperacion
+        binding.tvlogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         recuperarService = retrofit.create(recuperarservice::class.java)
 
@@ -49,9 +55,9 @@ class RecuperacionActivity : AppCompatActivity() {
                     val mensaje = response.body()?.mensaje ?: "Respuesta vacía del servidor"
                     // Manejar la respuesta exitosa
                     Toast.makeText(this@RecuperacionActivity, mensaje, Toast.LENGTH_SHORT).show()
-                    binding.etcorre.text.clear()
-                    binding.etpalabra.text.clear()
-                    binding.etnuevcontra.text.clear()
+                    val correo = binding.etcorre.text?.toString() ?: ""
+                    val password = binding.etpalabra.text?.toString() ?: ""
+                    val palabra = binding.etnuevcontra.text?.toString() ?: ""
                     // Redireccionar a LoginActivity
                     val intent = Intent(this@RecuperacionActivity, LoginActivity::class.java)
                     startActivity(intent)
@@ -61,18 +67,18 @@ class RecuperacionActivity : AppCompatActivity() {
                     val errorBody = response.errorBody()?.string()
                     val errorMessage = errorBody ?: "Error en la respuesta del servidor"
                     Toast.makeText(this@RecuperacionActivity, errorMessage, Toast.LENGTH_SHORT).show()
-                    binding.etcorre.text.clear()
-                    binding.etpalabra.text.clear()
-                    binding.etnuevcontra.text.clear()
+                    val correo = binding.etcorre.text?.toString() ?: ""
+                    val password = binding.etpalabra.text?.toString() ?: ""
+                    val palabra = binding.etnuevcontra.text?.toString() ?: ""
                 }
             }
 
             override fun onFailure(call: Call<putRecuperarResponse>, t: Throwable) {
                 // Manejar errores de comunicación
-                Toast.makeText(this@RecuperacionActivity, "Error de comunicación con el servidor", Toast.LENGTH_SHORT).show()
-                binding.etcorre.text.clear()
-                binding.etpalabra.text.clear()
-                binding.etnuevcontra.text.clear()
+
+                val correo = binding.etcorre.text?.toString() ?: ""
+                val password = binding.etpalabra.text?.toString() ?: ""
+                val palabra = binding.etnuevcontra.text?.toString() ?: ""
             }
         })
     }

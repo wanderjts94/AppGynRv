@@ -1,205 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ba"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".PerfilFragment">
+    android:background="@drawable/entrenamientoo"
+    tools:context="LoginActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primario"
+        android:alpha="0.7"/>
 
-        <TextView
-            android:id="@+id/etSub"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@+id/card_view"
+        android:padding="28dp">
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/black"
-            android:text="@string/subtitP"
-            android:textColor="@color/orange_special"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <!-- Plain text para Nombre -->
-        <EditText
-            android:id="@+id/etNombre"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="44dp"
-            android:background="@color/black"
-            android:hint="@string/etNom"
-            android:textColor="@color/white"
-            android:textColorHighlight="#FF5722"
-            android:textColorHint="#F0FFFFFF"
-            android:textColorLink="#03A9F4"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etSub"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Plain text para Apellido -->
-        <EditText
-            android:id="@+id/etApellido"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="16dp"
-            android:background="@color/black"
-            android:hint="@string/ape"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/etNombre"
-            app:layout_constraintTop_toTopOf="@id/etNombre"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
-
-        <EditText
-            android:id="@+id/etDNI"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="44dp"
-            android:background="@color/black"
-            android:hint="@string/etDNI"
-            android:textColor="@color/white"
-            android:textColorHint="#F0FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etNombre"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Plain text para coreo -->
-        <EditText
-            android:id="@+id/etCorreo"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="16dp"
-            android:background="@color/black"
-            android:hint="@string/etcorre"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/etDNI"
-            app:layout_constraintTop_toTopOf="@id/etDNI"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+            android:src="@drawable/gym_revo"/>
 
 
-        <EditText
-            android:id="@+id/etcelular"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="44dp"
-            android:background="@color/black"
-            android:hint="@string/etcell"
-            android:numeric="integer"
-            android:textColor="@color/white"
-            android:textColorHint="#F0FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etDNI"
-            tools:ignore="TouchTargetSizeCheck" />
 
-        <!-- Plain text para coreo -->
-        <EditText
-            android:id="@+id/etaltura"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="16dp"
-            android:background="@color/black"
-            android:hint="@string/etalt"
-            android:numeric="decimal"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/etcelular"
-            app:layout_constraintTop_toTopOf="@id/etcelular"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+    </LinearLayout>
 
-        <EditText
-            android:id="@+id/etPes"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="44dp"
-            android:background="@color/black"
-            android:hint="@string/etpesoo"
-            android:numeric="decimal"
-            android:textColor="@color/white"
-            android:textColorHint="#F0FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etcelular"
-            tools:ignore="TouchTargetSizeCheck" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view"
+        >
 
-        <!-- Plain text para coreo -->
-        <EditText
-            android:id="@+id/etFecha"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="16dp"
-            android:background="@color/black"
-            android:hint="@string/etFech"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/etPes"
-            app:layout_constraintTop_toTopOf="@id/etPes"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
 
-        <Button
-            android:id="@+id/btnVip"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="40dp"
-            android:text="@string/btnvip"
-            android:textSize="20sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/black"
+                android:padding="28dp">
 
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="80dp"
-            android:text="@string/btnG"
-            android:textSize="20sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnVip" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil"
+                    android:textColor="@color/primario"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/btnBuscar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/purple_500"
-            android:contentDescription="@string/btbucar"
-            android:src="@android:drawable/ic_menu_search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPes" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/textb"
-            android:textColor="@color/orange_special"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPes" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombres"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleDrawable="@drawable/icono_persona"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/icono_persona"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apellidos"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutApellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleDrawable="@drawable/icono_persona"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/icono_persona"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etApellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DNI"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutDNI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/icono_persona"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDNI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo Electronico"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCorreoE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/correo"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Celular"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCelular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/telefono"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etcelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de nacimiento"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutFechaNac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/calendario"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="date"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Altura"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/altura"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etaltura"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peso"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/peso"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Palabra Clave"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPalabra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#F8F7F7">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etpalabrac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="GUARDAR"
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVip"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="HAZTE PREMIUM"
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

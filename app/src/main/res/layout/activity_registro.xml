@@ -1,240 +1,484 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroActivity">
+    android:background="@drawable/entrenamientoo"
+    tools:context="LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black">
+        android:layout_height="match_parent"
+        android:background="@color/primario"
+        android:alpha="0.7"/>
 
-        <TextView
-            android:id="@+id/textView"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="REGISTRARME"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/rptNombres"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Nombres"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <EditText
-            android:id="@+id/rptPalabraClave"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:hint="Palabra clave"
-            android:inputType="text"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptCorreo" />
-
-        <EditText
-            android:id="@+id/rptCorreo"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:alpha="0.7"
-            android:drawableEnd="@drawable/baseline_check_24"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:hint="Correo"
-            android:textColor="@color/white"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:textColorHint="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptNombres" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="25dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="25dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@+id/card_view"
+        android:padding="28dp">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="125dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@mipmap/fotoregistro_joseph" />
-
-        <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Datos de la Cuenta:"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            android:src="@drawable/gym_revo"/>
 
-        <EditText
-            android:id="@+id/rptApellidos"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Apellidos"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:inputType="text"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    </LinearLayout>
 
-        <EditText
-            android:id="@+id/rptDNI"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:hint="DNI"
-            android:inputType="text"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/rptCorreo" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view"
+        >
 
-        <EditText
-            android:id="@+id/rptCelular"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:hint="Celular"
-            android:inputType="number"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:textColorHint="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptDNI" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Datos fisiométricos del Usuario:"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptCelular"
-            tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/black"
+                android:padding="28dp">
 
-        <Button
-            android:id="@+id/btnRegistrar"
-            android:layout_width="200dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/orange_special"
-            android:text="Registrar"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/rptPeso"
-            tools:ignore="MissingConstraints" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarte"
+                    android:textColor="@color/primario"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/rptPassword"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/rptApellidos" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="Por favor ingrese su información"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/rptFechaNac"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:hint="Fecha Nac."
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:inputType="date"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/rptPalabraClave" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
 
-        <EditText
-            android:id="@+id/rptAltura"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="Altura"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:inputType="numberDecimal"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <EditText
-            android:id="@+id/rptPeso"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="Peso"
-            android:textColor="@color/white"
-            android:alpha="0.7"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-            android:inputType="numberDecimal"
-            android:textColorHint="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombres"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleDrawable="@drawable/icono_persona"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/icono_persona"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptNombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apellidos"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutApellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleDrawable="@drawable/icono_persona"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/icono_persona"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptApellidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo Electronico"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCorreoE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/correo"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contraseña"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutContra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#F8F7F7">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Palabra Clave"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPalabraC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#F8F7F7">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptPalabraClave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DNI"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutDNI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/icono_persona"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptDNI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Celular"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCelular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/telefono"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptCelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de nacimiento"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutFechaNac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/calendario"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptFechaNac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="date"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Datos fisiométricos del Usuario:"
+                    android:textColor="@color/primario"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Altura"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/altura"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptAltura"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peso"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    app:hintTextColor="@color/white"
+                    app:passwordToggleEnabled="false"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/peso"
+                    app:endIconTint="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rptPeso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="REGISTRARSE"
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+
+
+
+
+
+
+
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
