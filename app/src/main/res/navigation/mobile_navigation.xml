@@ -24,4 +24,9 @@
         android:name="pe.edu.idat.appgynrv.PerfilFragment"
         android:label="@string/Perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/haztePremiumFragment"
+        android:name="pe.edu.idat.appgynrv.HaztePremiumFragment"
+        android:label="fragment_hazte_premium"
+        tools:layout="@layout/fragment_hazte_premium" />
 </navigation>

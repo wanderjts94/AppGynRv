@@ -25,7 +25,7 @@ class RecuperacionActivity : AppCompatActivity() {
 
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.18.28:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
