@@ -58,4 +58,7 @@
     <string name="etinfoestamientos">Tumbate boca abajo, dobla los codos y \ncoloca las manos debajo de los hombros.\nA comtinuacion,levanta el pecho del suelo\ntanto como puedas.Manten la posicion \ndurante unos segundos.</string>
     <string name="etinfoflexiones">Suba y baje el cuerpo con los brazos \nmantenga el cuerpo recto.Procure que los\ncodos formen 45 grados con el tronco,este \nejercicio trabaja los musculos del pecho,\nhombros,triceps,espalda y piernas.</string>
     <string name="titflex">Flexiones</string>
+    <string name="btnconfiguracion">EDITAR:CALENDARIO DE ENTRENAMIENTO SEMANAL</string>
+    <string name="btnpagomen">PAGO MENSUAL S/30.00/MES</string>
+    <string name="etinfopago">".SIN ANUNCIOS\n.MAS RUTINAS Y EJERCICIOS\n.ACTUALIZACIONES DE PRODUCTOS\n.PLANES DE ENTRENAMIENTOS ILIMITADOS "</string>
 </resources>
