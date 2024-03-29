@@ -32,4 +32,9 @@
     <string name="etclav">Ingrese Palabra Clave</string>
     <string name="etnuevcontra">Ingrese Nueva Contraseña</string>
     <string name="btcambios">GUARDAR</string>
+    <string name="evcalendario">Editar:Calendario de \nEntrenamiento Semanal</string>
+    <string name="etconfigurationejer">"Editar:Configuracion de Entrenamiento Semanal "</string>
+    <string name="ejercicioset">Editar:Calendario de Entrenamiento Semanal</string>
+    <string name="etpremium">.Sin Anuncios\n.Mas Rutinas y Ejercicios\n.Actualizaciones de Productos \n.Planes de Entrenamientos Ilimitados</string>
+    <string name="btnpagomensual">Pago Mensual S/30.00/Mes</string>
 </resources>
