@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#BEBEBE">
+        android:background="#918C8C">
 
         <ImageView
             android:id="@+id/ivimagenC"
@@ -31,6 +31,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:text="TextView"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivimagenC"
@@ -43,6 +44,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivimagenC"
@@ -55,6 +57,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="70dp"
             android:text="@string/textcant"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
