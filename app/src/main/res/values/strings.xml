@@ -3,7 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Ejercicio">EJERCICIOS</string>
     <string name="Informe">INFORME</string>
@@ -58,12 +57,33 @@
     <string name="etinfoestamientos">Tumbate boca abajo, dobla los codos y \ncoloca las manos debajo de los hombros.\nA comtinuacion,levanta el pecho del suelo\ntanto como puedas.Manten la posicion \ndurante unos segundos.</string>
     <string name="etinfoflexiones">Suba y baje el cuerpo con los brazos \nmantenga el cuerpo recto.Procure que los\ncodos formen 45 grados con el tronco,este \nejercicio trabaja los musculos del pecho,\nhombros,triceps,espalda y piernas.</string>
     <string name="titflex">Flexiones</string>
+    <string name="scrolll">este es un scroll</string>
+    <string name="titidetalles">Producto Seleccionado</string>
+    <string name="btncart">boton imagen de carrito</string>
+    <string name="imagenproducto">imagen de producto</string>
+    <string name="etnameproducto">Aaqui cambiar el nombre de producto</string>
+    <string name="etdescrip">Descripcion:</string>
+    <string name="etinfoaqui">Aqui la info del producto</string>
+    <string name="etcant">Cantidad del producto :</string>
+    <string name="btnAgregarc">Agregar</string>
+    <string name="etproducc">Producto:</string>
+    <string name="titlist">LISTA CARRITO</string>
+    <string name="btnim">imagen boton para redireccionar a carrito</string>
+    <string name="btnpag">Pagar</string>
+    <string name="textcant">Cantidad N°:</string>
+    <string name="ivimagen">imagen de rv</string>
+    <string name="txtnum">cantidad de producto</string>
+    <string name="tnun">0</string>
     <string name="btnconfiguracion">EDITAR:CALENDARIO DE ENTRENAMIENTO SEMANAL</string>
     <string name="btnpagomen">PAGO MENSUAL S/30.00/MES</string>
     <string name="etinfopago">".SIN ANUNCIOS\n.MAS RUTINAS Y EJERCICIOS\n.ACTUALIZACIONES DE PRODUCTOS\n.PLANES DE ENTRENAMIENTOS ILIMITADOS "</string>
+
     <string name="botonsuplemento">Suplemento</string>
     <string name="botonotros">Otros</string>
     <string name="botonequipoentre">Equipos de Entrenamiento</string>
     <string name="btnequipoentre">E.Entrenamiento</string>
     <string name="botoncompra1">Comprar</string>
+
+
+
 </resources>
