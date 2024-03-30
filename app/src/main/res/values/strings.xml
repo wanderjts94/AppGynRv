@@ -3,7 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Ejercicio">EJERCICIOS</string>
     <string name="Informe">INFORME</string>
@@ -75,4 +74,8 @@
     <string name="ivimagen">imagen de rv</string>
     <string name="txtnum">cantidad de producto</string>
     <string name="tnun">0</string>
+    <string name="btnconfiguracion">EDITAR:CALENDARIO DE ENTRENAMIENTO SEMANAL</string>
+    <string name="btnpagomen">PAGO MENSUAL S/30.00/MES</string>
+    <string name="etinfopago">".SIN ANUNCIOS\n.MAS RUTINAS Y EJERCICIOS\n.ACTUALIZACIONES DE PRODUCTOS\n.PLANES DE ENTRENAMIENTOS ILIMITADOS "</string>
+
 </resources>
