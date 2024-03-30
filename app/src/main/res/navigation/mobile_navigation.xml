@@ -68,4 +68,31 @@
         android:name="pe.edu.idat.appgynrv.DetalleCompraFragment"
         android:label="fragment_detalle_compra"
         tools:layout="@layout/fragment_detalle_compra" />
+    <fragment
+        android:id="@+id/calendarioFragment"
+        android:name="pe.edu.idat.appgynrv.CalendarioFragment"
+        android:label="CalendarioFragment" />
+    <fragment
+        android:id="@+id/felicidadesFragment"
+        android:name="pe.edu.idat.appgynrv.FelicidadesFragment"
+        android:label="FelicidadesFragment" />
+    <fragment
+        android:id="@+id/preFelicidadesFragment"
+        android:name="pe.edu.idat.appgynrv.PreFelicidadesFragment"
+        android:label="PreFelicidadesFragment" />
+    <fragment
+        android:id="@+id/carritoCompraFragment2"
+        android:name="pe.edu.idat.appgynrv.CarritoCompraFragment"
+        android:label="fragment_carrito_compra"
+        tools:layout="@layout/fragment_carrito_compra" />
+    <fragment
+        android:id="@+id/haztePremiumFragment"
+        android:name="pe.edu.idat.appgynrv.HaztePremiumFragment"
+        android:label="fragment_hazte_premium"
+        tools:layout="@layout/fragment_hazte_premium" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="pe.edu.idat.appgynrv.LoginActivity"
+        android:label="fragment_felicidades"
+        tools:layout="@layout/fragment_felicidades" />
 </navigation>
