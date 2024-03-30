@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.ejercicioFragment, R.id.informeFragment, R.id.tiendaFragment,
                 R.id.perfilFragment,R.id.infosaltoTFragment, R.id.rutinapornivelFragment,
                 R.id.infosaltoTFragment,R.id.infoFlexDFragment, R.id.infoFlexIncFragment,
-                R.id.infoEstiramientoFragment,R.id.infoEstiraPechoFragment
+                R.id.infoEstiramientoFragment,R.id.infoEstiraPechoFragment,R.id.carritoCompraFragment,
+                R.id.detalleCompraFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
