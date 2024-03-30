@@ -11,6 +11,7 @@ import pe.edu.idat.appgynrv.databinding.FragmentInfosaltoTBinding
 class InfosaltoTFragment : Fragment() {
 
 
+
     private lateinit var binding: FragmentInfosaltoTBinding
 
     override fun onCreateView(
@@ -29,6 +30,10 @@ class InfosaltoTFragment : Fragment() {
         binding.btnSiguiente.setOnClickListener {
             // Navegar hacia el fragmento InfoFlexDFragment
             findNavController().navigate(R.id.action_infosaltoTFragment_to_infoFlexDFragment)
+        }
+        binding.btncerrar.setOnClickListener {
+            // Navegar hacia el fragmento RutinapornivelFragment
+            findNavController().navigate(R.id.to_rutinapornivelFragment)
         }
     }
 }

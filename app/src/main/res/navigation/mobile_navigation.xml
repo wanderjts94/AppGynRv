@@ -29,9 +29,13 @@
         android:name="pe.edu.idat.appgynrv.InfosaltoTFragment"
         android:label="fragment_infosalto_t"
         tools:layout="@layout/fragment_infosalto_t">
-    <action
-        android:id="@+id/action_infosaltoTFragment_to_infoFlexDFragment"
-        app:destination="@id/infoFlexDFragment" />
+        <action
+            android:id="@+id/action_infosaltoTFragment_to_infoFlexDFragment"
+            app:destination="@id/infoFlexDFragment" />
+
+        <action
+            android:id="@+id/to_rutinapornivelFragment"
+            app:destination="@id/rutinapornivelFragment"/>
     </fragment>
     <fragment
         android:id="@+id/rutinapornivelFragment"
@@ -42,22 +46,50 @@
         android:id="@+id/infoEstiraPechoFragment"
         android:name="pe.edu.idat.appgynrv.InfoEstiraPechoFragment"
         android:label="fragment_info_estira_pecho"
-        tools:layout="@layout/fragment_info_estira_pecho" />
+        tools:layout="@layout/fragment_info_estira_pecho" >
+        <action
+            android:id="@+id/action_infoEstiraPechoFragment_to_infosaltoTFragment"
+            app:destination="@id/infosaltoTFragment" />
+        <action
+            android:id="@+id/to_rutinapornivelFragment"
+            app:destination="@id/rutinapornivelFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/infoEstiramientoFragment"
         android:name="pe.edu.idat.appgynrv.InfoEstiramientoFragment"
         android:label="fragment_info_estiramiento"
-        tools:layout="@layout/fragment_info_estiramiento" />
+        tools:layout="@layout/fragment_info_estiramiento" >
+        <action
+            android:id="@+id/action_infoEstiramientoFragment_to_infoEstiraPechoFragment"
+            app:destination="@id/infoEstiraPechoFragment" />
+        <action
+            android:id="@+id/to_rutinapornivelFragment"
+            app:destination="@id/rutinapornivelFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/infoFlexDFragment"
         android:name="pe.edu.idat.appgynrv.InfoFlexDFragment"
         android:label="fragment_info_flex_d"
-        tools:layout="@layout/fragment_info_flex_d" />
+        tools:layout="@layout/fragment_info_flex_d" >
+        <action
+            android:id="@+id/action_infoFlexDFragment_to_InfoFlexIncFragment"
+            app:destination="@id/infoFlexIncFragment" />
+        <action
+            android:id="@+id/to_rutinapornivelFragment"
+            app:destination="@id/rutinapornivelFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/infoFlexIncFragment"
         android:name="pe.edu.idat.appgynrv.InfoFlexIncFragment"
         android:label="fragment_info_flex_inc"
-        tools:layout="@layout/fragment_info_flex_inc" />
+        tools:layout="@layout/fragment_info_flex_inc" >
+        <action
+            android:id="@+id/action_InfoFlexIncFragment_to_infoEstiramientoFragment"
+            app:destination="@id/infoEstiramientoFragment" />
+        <action
+            android:id="@+id/to_rutinapornivelFragment"
+            app:destination="@id/rutinapornivelFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/ejercicioProcesoFragment"
         android:name="pe.edu.idat.appgynrv.EjercicioProcesoFragment"

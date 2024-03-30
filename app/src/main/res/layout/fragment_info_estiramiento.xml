@@ -207,6 +207,7 @@
 
 
 
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSiguiente"
                     android:layout_width="match_parent"
@@ -219,6 +220,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="15dp"/>
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btncerrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="CERRAR"
+                    android:textSize="25sp"
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"/>
 
 
             </LinearLayout>
