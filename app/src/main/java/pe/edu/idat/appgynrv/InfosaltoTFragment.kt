@@ -30,5 +30,9 @@ class InfosaltoTFragment : Fragment() {
             // Navegar hacia el fragmento InfoFlexDFragment
             findNavController().navigate(R.id.action_infosaltoTFragment_to_infoFlexDFragment)
         }
+        binding.btncerrar.setOnClickListener {
+            // Navegar hacia el fragmento RutinapornivelFragment
+            findNavController().navigate(R.id.to_rutinapornivelFragment)
+        }
     }
 }

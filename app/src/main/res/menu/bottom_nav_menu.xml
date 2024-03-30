@@ -16,7 +16,7 @@
         android:icon="@drawable/tienda"
         android:title="@string/Tienda" />
     <item
-        android:id="@+id/perfilFragment"
+        android:id="@+id/infosaltoTFragment"
         android:icon="@drawable/perfil"
         android:title="@string/Perfil" />
 
