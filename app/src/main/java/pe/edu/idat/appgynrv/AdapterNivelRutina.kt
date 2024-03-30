@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import pe.edu.idat.appgynrv.databinding.ItemejerciciosderutinaBinding
 
-class AdapterNivelRutina (val listanivelrutinas: List<NivelRutinas>,val context :Context)
-    :RecyclerView.Adapter<AdapterNivelRutina.ViewHolder>() {
+class AdapterNivelRutina ( private val listanivelrutinas: List<NivelRutinas>,
+                           private val context: Context
+) : RecyclerView.Adapter<AdapterNivelRutina.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemejerciciosderutinaBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -30,12 +32,17 @@ class AdapterNivelRutina (val listanivelrutinas: List<NivelRutinas>,val context 
                 binding.etnameejercicioQ.text = nombreejer
                 binding.etcantejercicio.text = cantidadejer
                 binding.imageView.setImageResource(img)
-                binding.btninfoC.setOnClickListener(View.OnClickListener {
-                    Toast.makeText(context, "se redireccionara a info", Toast.LENGTH_LONG).show()
-                })
-                binding.cvitemejer.setOnClickListener(View.OnClickListener {
-                    Toast.makeText(context, "se redireccionara a subinterfaz", Toast.LENGTH_LONG).show()
-                })
+                binding.btninfoC.setOnClickListener {
+
+                    // Obtener el NavController desde la vista
+                    val navController = it.findNavController()
+                    // Navegar al fragmento InfosaltoTFragment
+                    navController.navigate(R.id.infosaltoTFragment)
+
+                }
+                binding.cvitemejer.setOnClickListener {
+                    Toast.makeText(context, "Haz clip en iniciar rutina", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

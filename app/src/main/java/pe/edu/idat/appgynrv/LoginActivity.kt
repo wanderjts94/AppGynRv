@@ -26,7 +26,6 @@ class LoginActivity : AppCompatActivity() {
 
         val baseUrl = "http://192.168.1.10:9090/api/usuarios/"
 
-        Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
