@@ -12,6 +12,7 @@ import pe.edu.idat.appgynrv.databinding.FragmentInfoEstiraPechoBinding
 class InfoEstiraPechoFragment : Fragment() {
 
     private lateinit var binding: FragmentInfoEstiraPechoBinding
+    private var isImage1Displayed = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +34,25 @@ class InfoEstiraPechoFragment : Fragment() {
         binding.btncerrar.setOnClickListener {
             // Navegar hacia el fragmento RutinapornivelFragment
             findNavController().navigate(R.id.to_rutinapornivelFragment)
+        }
+        // Configurar OnClickListener para el botón ANIMACIÓN
+        binding.btnAnimacion.setOnClickListener {
+            // Cambiar la imagen de acuerdo al estado actual
+            if (isImage1Displayed) {
+                binding.imageView.setImageResource(R.drawable.ejerciciosv2)
+            } else {
+                binding.imageView.setImageResource(R.drawable.carga2)
+            }
+            // Cambiar el estado de la variable
+            isImage1Displayed = !isImage1Displayed
+        }
+
+        // Configurar OnClickListener para el botón TUTORIAL
+        binding.btnTutorial.setOnClickListener {
+            // Restaurar la imagen original
+            binding.imageView.setImageResource(R.drawable.ejerciciosv2)
+            // Actualizar el estado de la variable
+            isImage1Displayed = true
         }
     }
 }
