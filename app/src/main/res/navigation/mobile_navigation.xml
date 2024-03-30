@@ -55,6 +55,10 @@
         android:label="fragment_info_flex_inc"
         tools:layout="@layout/fragment_info_flex_inc" />
     <fragment
+        android:id="@+id/ejercicioProcesoFragment"
+        android:name="pe.edu.idat.appgynrv.EjercicioProcesoFragment"
+        android:label="EjercicioProcesoFragment" />
+
         android:id="@+id/carritoCompraFragment"
         android:name="pe.edu.idat.appgynrv.CarritoCompraFragment"
         android:label="fragment_carrito_compra"
