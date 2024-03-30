@@ -33,7 +33,7 @@
     <string name="etnuevcontra">Ingrese Nueva Contraseña</string>
     <string name="btcambios">GUARDAR</string>
     <string name="titSal">Saltos De Tijeras</string>
-    <string name="ettextinfor">Comienza con los pies y los brazos a\nlos lados a continuacion salta con los pies\nseparados y las manos en la cabeza.\nVuelve a la posicion original y realiza la\nsiguiente repeticion.\nEste ejwercicio sirve para entrenar todo\nel cuerpo y trabajar todos los gtandes grupos\nmusculares</string>
+    <string name="ettextinfor">Comienza con los pies y los brazos a los lados a continuacion salta con los piesb separados y las manos en la cabeza. Vuelve a la posicion original y realiza la siguiente repeticion. Este ejwercicio sirve para entrenar todo el cuerpo y trabajar todos los gtandes grupos musculares</string>
     <string name="submuscl">Musculos Resaltados</string>
     <string name="etzonaP">Zona Principal</string>
     <string name="etmusc">● Hombros</string>
@@ -50,12 +50,14 @@
     <string name="btninit">INICIAR</string>
     <string name="ecscroll">es un scroll</string>
     <string name="etecroll">es un scroll</string>
-    <string name="ettextinfo2">Comienza en posicion de flexion pero con las \nmanos en alto sobre una silla o un banco.\nLuego preciona el cuerpo hacia arriba y hacia \nabajo con la fuerza de los brazos.Recuerda\nmantener el torso en linea recta.</string>
+    <string name="ettextinfo2">Comienza en posicion de flexion pero con las manos en alto sobre una silla o un banco.Luego preciona el cuerpo hacia arriba y hacia abajo con la fuerza de los brazos.Recuerda mantener el torso en linea recta.</string>
     <string name="titflea">Flexiones con Inclinacion</string>
     <string name="titpech">Estiramiento de Pecho</string>
-    <string name="etinfopecho">Busca una puerta,colocate en posicion de \nestocada con los brazos en la marca y los \ncodos un poco por debajo de los hombros.\nA comtinuacion, mueve el pecho hacia adelante\nlentamente.Manten esta posicion durante \n30 - 40 segundos.\ndespues vuelve a la posicion original \nlentamente.baja los brazos y realiza un par\nde rotaciones de hombro.</string>
+    <string name="etinfopecho">Busca una puerta,colocate en posicion de estocada con los brazos en la marca y los codos un poco por debajo de los hombros.A comtinuacion, mueve el pecho hacia adelante lentamente.Manten esta posicion durante 30 - 40 segundos.despues vuelve a la posicion original lentamente.baja los brazos y realiza un par de rotaciones de hombro.</string>
     <string name="titiestira">Estiramiento de Cobra</string>
-    <string name="etinfoestamientos">Tumbate boca abajo, dobla los codos y \ncoloca las manos debajo de los hombros.\nA comtinuacion,levanta el pecho del suelo\ntanto como puedas.Manten la posicion \ndurante unos segundos.</string>
-    <string name="etinfoflexiones">Suba y baje el cuerpo con los brazos \nmantenga el cuerpo recto.Procure que los\ncodos formen 45 grados con el tronco,este \nejercicio trabaja los musculos del pecho,\nhombros,triceps,espalda y piernas.</string>
+    <string name="etinfoestamientos">Tumbate boca abajo, dobla los codos y coloca las manos debajo de los hombros.A comtinuacion,levanta el pecho del suelo tanto como puedas.Manten la posicion durante unos segundos.</string>
+    <string name="etinfoflexiones">Suba y baje el cuerpo con los brazos mantenga el cuerpo recto.Procure que los codos formen 45 grados con el tronco,este ejercicio trabaja los musculos del pecho, hombros,triceps,espalda y piernas.</string>
     <string name="titflex">Flexiones</string>
+    <string name="pause">PAUSA</string>
+    <string name="start">INICIO</string>
 </resources>

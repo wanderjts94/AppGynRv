@@ -1,241 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ConstrainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primario"
-    tools:context=".InfosaltoTFragment">
+    android:background="@drawable/entrenamientoo"
+    tools:context=".InfoFlexIncFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primario"
+        android:alpha="0.7">
 
-    <!-- Barra con botones -->
+    </RelativeLayout>
+
     <LinearLayout
-        android:id="@+id/barraBotones"
+        android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_500"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="28dp">
 
         <Button
             android:id="@+id/btnTutorial"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/purple_500"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/black"
             android:text="@string/ettuturial" />
+
+
 
         <Button
             android:id="@+id/btnAnimacion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/purple_500"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/black"
             android:text="@string/etanimacion" />
 
     </LinearLayout>
 
-
-    <!-- Imagen -->
-    <ImageView
-        android:id="@+id/ivIMGinfo"
-        android:layout_width="402dp"
-        android:layout_height="251dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ima4"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/barraBotones" />
-
-    <TextView
-        android:id="@+id/evSaltoT"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/buttonLayout2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="@string/titSal"
-        android:textColor="@color/purple_500"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/ivIMGinfo" />
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="28dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="30dp" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/ejerciciosv2" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="30dp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/etparrafointo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/ettextinfor"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/evSaltoT" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view">
 
-    <TextView
-        android:id="@+id/etsubtitM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/submuscl"
-        android:textColor="@color/purple_500"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/etparrafointo" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/ivIMGizq"
-        android:layout_width="184dp"
-        android:layout_height="184dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ima2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/etsubtitM" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/black"
+                android:padding="28dp">
 
-    <ImageView
-        android:id="@+id/ivIMGder"
-        android:layout_width="200dp"
-        android:layout_height="194dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ima1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/ivIMGizq"
-        app:layout_constraintTop_toBottomOf="@id/etsubtitM" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salto de tijera"
+                    android:textColor="@color/primario"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/etsubtextGrupoM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/etzonaP"
-        android:textColor="@color/purple_500"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/ivIMGizq" />
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="@string/ettextinfor"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="start|end" />
 
-    <TextView
-        android:id="@+id/ethombro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/purple_500"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:radius="5dp"
-        android:text="@string/etmusc"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/etsubtextGrupoM" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
 
-    <TextView
-        android:id="@+id/etCuadrip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/purple_500"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:radius="5dp"
-        android:text="@string/etcuadro"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/ethombro"
-        app:layout_constraintTop_toBottomOf="@+id/etsubtextGrupoM" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Musculos resaltados"
+                    android:textColor="@color/primario"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/etAductores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/purple_500"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:radius="5dp"
-        android:text="@string/etaducto"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/ethombro" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
 
-    <TextView
-        android:id="@+id/etGluteo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/purple_500"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:radius="5dp"
-        android:text="@string/etglue"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/etAductores"
-        app:layout_constraintTop_toBottomOf="@+id/etCuadrip" />
 
-    <TextView
-        android:id="@+id/etGelemlos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/purple_500"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:radius="5dp"
-        android:text="@string/etGem"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/etAductores" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="300dp"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-0dp"
+                    android:src="@drawable/ima3" />
 
-    <TextView
-        android:id="@+id/etpecho"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/purple_500"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:radius="5dp"
-        android:text="@string/etpech"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/etGelemlos"
-        app:layout_constraintTop_toBottomOf="@+id/etGluteo" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zona principal"
+                    android:textColor="@color/primario"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="3"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hombros"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="start|end"
+                        android:layout_columnWeight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aductores"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="start|end"
+                        android:layout_columnWeight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gemelos"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="start|end"
+                        android:layout_columnWeight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cuadriceps"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="start|end"
+                        android:layout_columnWeight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gluteo"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="start|end"
+                        android:layout_columnWeight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pecho"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="start|end"
+                        android:layout_columnWeight="1"/>
+
+                </GridLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp" />
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
