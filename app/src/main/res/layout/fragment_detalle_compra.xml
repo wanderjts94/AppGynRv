@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/entrenamientoo"
+    tools:context=".DetalleCompraFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primario"
+        android:alpha="0.7"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/card_view"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/black"
+                android:padding="28dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end">
+
+
+                    <TextView
+                        android:id="@+id/ettitprotdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/titidetalles"
+                        android:textColor="@color/primario"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/btncarrito"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/primario"
+                        android:contentDescription="@string/btncart"
+                        android:src="@drawable/baseline_shopping_cart_24" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivimagenproduct"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:contentDescription="@string/imagenproducto"
+                        android:src="@android:drawable/ic_menu_gallery" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/ettitproducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etproducc"
+                        android:textColor="@color/primario"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/etnombreproducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etnameproducto"
+                        android:textColor="@color/purple_200"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+
+                    <TextView
+                        android:id="@+id/etdescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etdescrip"
+                        android:textColor="@color/primario"
+                        android:textSize="25dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/etinfodescript"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etinfoaqui"
+                        android:textColor="@color/purple_200"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+
+                    <TextView
+                        android:id="@+id/etcantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etcant"
+                        android:textColor="@color/primario"
+                        android:textSize="25dp"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/npnumerocant"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@color/purple_200"
+                        android:textSize="24sp" />
+
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAgregarC"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="@string/btnAgregarc"
+                        android:textSize="24sp"
+                        app:cornerRadius="32dp" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"/>
+
+
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
