@@ -61,4 +61,9 @@
     <string name="btnconfiguracion">EDITAR:CALENDARIO DE ENTRENAMIENTO SEMANAL</string>
     <string name="btnpagomen">PAGO MENSUAL S/30.00/MES</string>
     <string name="etinfopago">".SIN ANUNCIOS\n.MAS RUTINAS Y EJERCICIOS\n.ACTUALIZACIONES DE PRODUCTOS\n.PLANES DE ENTRENAMIENTOS ILIMITADOS "</string>
+    <string name="botonsuplemento">Suplemento</string>
+    <string name="botonotros">Otros</string>
+    <string name="botonequipoentre">Equipos de Entrenamiento</string>
+    <string name="btnequipoentre">E.Entrenamiento</string>
+    <string name="botoncompra1">Comprar</string>
 </resources>
