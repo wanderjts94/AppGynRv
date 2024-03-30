@@ -28,7 +28,11 @@
         android:id="@+id/infosaltoTFragment"
         android:name="pe.edu.idat.appgynrv.InfosaltoTFragment"
         android:label="fragment_infosalto_t"
-        tools:layout="@layout/fragment_infosalto_t" />
+        tools:layout="@layout/fragment_infosalto_t">
+    <action
+        android:id="@+id/action_infosaltoTFragment_to_infoFlexDFragment"
+        app:destination="@id/infoFlexDFragment" />
+    </fragment>
     <fragment
         android:id="@+id/rutinapornivelFragment"
         android:name="pe.edu.idat.appgynrv.RutinapornivelFragment"
@@ -58,7 +62,7 @@
         android:id="@+id/ejercicioProcesoFragment"
         android:name="pe.edu.idat.appgynrv.EjercicioProcesoFragment"
         android:label="EjercicioProcesoFragment" />
-
+    <fragment
         android:id="@+id/carritoCompraFragment"
         android:name="pe.edu.idat.appgynrv.CarritoCompraFragment"
         android:label="fragment_carrito_compra"
@@ -90,9 +94,5 @@
         android:name="pe.edu.idat.appgynrv.LoginActivity"
         android:label="fragment_felicidades"
         tools:layout="@layout/fragment_felicidades" />
-    <fragment
-        android:id="@+id/carritoCompraFragment"
-        android:name="pe.edu.idat.appgynrv.CarritoCompraFragment"
-        android:label="fragment_carrito_compra"
-        tools:layout="@layout/fragment_carrito_compra" />
+
 </navigation>
