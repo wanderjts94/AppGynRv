@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
+import androidx.appcompat.app.AppCompatActivity
+
 import android.widget.Toast
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.getlistaejercicioResponse
 import pe.edu.idat.appgynrv.Retrofit.services.ejercicioservice
@@ -29,8 +33,26 @@ class RutinapornivelFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        // Inflate the layout for this fragment
+        //return inflater.inflate(R.layout.fragment_ejercicio, container, false)
+        _binding= FragmentRutinapornivelBinding.inflate(inflater,container,false)
+        // Obtener el correo electrónico almacenado en SharedPreferences
+        val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", AppCompatActivity.MODE_PRIVATE)
+        val nombre = sharedPreferences.getString("nombre", "")
+
+        val view= binding.root
+        val listanivelEjercicios = obtenerEjercicios()
+        binding.rvlistaejerciciosR.layoutManager= LinearLayoutManager(context)
+        binding.rvlistaejerciciosR.addItemDecoration(VerticalSpaceItemDecoration(16)) // Espacio vertical entre elementos
+        binding.rvlistaejerciciosR.adapter=AdapterNivelRutina(listanivelEjercicios,requireContext())
+        binding.etnamerutina.text= nombre
+        return view
+    }
+
         _binding = FragmentRutinapornivelBinding.inflate(inflater, container, false)
         val view = binding.root
+
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()

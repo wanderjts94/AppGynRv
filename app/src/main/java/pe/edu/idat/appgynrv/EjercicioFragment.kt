@@ -1,10 +1,12 @@
 package pe.edu.idat.appgynrv
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.databinding.FragmentEjercicioBinding
 
@@ -21,8 +23,14 @@ class EjercicioFragment : Fragment() {
         _binding= FragmentEjercicioBinding.inflate(inflater,container,false)
         val view = binding.root
         val listaEjercicios = obtenerEjercicios()
+
         binding.rvlistaejer.layoutManager=LinearLayoutManager(context)
         binding.rvlistaejer.adapter=AdapterRutina(listaEjercicios,requireContext())
+        //
+        binding.btnhaztepremium.setOnClickListener{
+            val navController = it.findNavController()
+            navController.navigate(R.id.haztePremiumFragment)
+        }
         return view
     }
 
@@ -31,7 +39,6 @@ class EjercicioFragment : Fragment() {
         listaEjercicios.add(Rutina("Rutina para Principiantes",R.drawable.princi))
         listaEjercicios.add(Rutina("Rutina para Intermedios",R.drawable.avanzado))
         listaEjercicios.add(Rutina("Rutina para Avanzados",R.drawable.medio))
-        listaEjercicios.add(Rutina("Rutina para Avanzados",R.drawable.premium01))
         return listaEjercicios
     }
 
