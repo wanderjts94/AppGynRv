@@ -35,6 +35,12 @@ class RegistroActivity : AppCompatActivity() {
 
         val service = retrofit.create(loginservice::class.java)
 
+        // Set click listener for tvlregistro
+        binding.tvllogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         // Obtener la fecha actual
         val fechaActual = Date()
 

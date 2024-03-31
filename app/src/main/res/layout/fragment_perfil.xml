@@ -95,6 +95,7 @@
                         android:background="@color/black"
                         android:inputType="text"
                         android:textColor="@color/white"
+                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,6 +133,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/black"
                         android:inputType="text"
+                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                         android:textColor="@color/white"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -167,6 +169,8 @@
                         android:id="@+id/etDNI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:maxLength="8"
                         android:background="@color/black"
                         android:inputType="text"
                         android:textColor="@color/white"
@@ -203,6 +207,7 @@
                         android:id="@+id/etCorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:background="@color/black"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/white"
@@ -241,6 +246,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/black"
+                        android:digits="0123456789"
+                        android:maxLength="9"
                         android:inputType="text"
                         android:textColor="@color/white"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -284,6 +291,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/black"
                         android:inputType="date"
+                        android:digits="0123456789/"
                         android:textColor="@color/white"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -396,6 +404,22 @@
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"/>
+
+                <TextView
+                    android:id="@+id/tvlcerrar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:alpha="0.7"
+                    android:gravity="center"
+                    android:text="Cerrar Sesion"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="wrap_content"
