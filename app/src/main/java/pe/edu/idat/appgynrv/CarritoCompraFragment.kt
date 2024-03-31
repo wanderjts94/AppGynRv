@@ -24,7 +24,7 @@ class CarritoCompraFragment : Fragment() {
         val view= binding.root
         val listadeproductos = obtenerproductos()
         binding.rvcarritotien.layoutManager= LinearLayoutManager(context)
-        binding.rvcarritotien.addItemDecoration(VerticalSpaceItemDecoration(16)) // Espacio vertical entre elementos
+        binding.rvcarritotien.addItemDecoration(AdapterNivelRutina.VerticalSpaceItemDecoration(16)) // Espacio vertical entre elementos
         binding.rvcarritotien.adapter=AdapterCarrito(listadeproductos,requireContext())
         return view
     }
