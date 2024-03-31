@@ -24,6 +24,7 @@ class AdapterRutina(val listarutinas:List<Rutina>,val context:Context)
     override fun getItemCount()=listarutinas.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         with(holder){
             with(listarutinas[position]){
                 binding.tvnombrejer.text= nombre
@@ -39,6 +40,17 @@ class AdapterRutina(val listarutinas:List<Rutina>,val context:Context)
                    navController.navigate(R.id.rutinapornivelFragment)
                }
             }
+
+    with(holder){
+        with(listarutinas[position]){
+            binding.tvnombrejer.text= nombre
+            binding.ivejercicio.setImageResource(img)
+            binding.cvejercicios.setOnClickListener(View.OnClickListener {
+                Toast.makeText(context,"Click en Rutina",Toast.LENGTH_LONG).show()
+            })
+
+
         }
     }
+}
 }

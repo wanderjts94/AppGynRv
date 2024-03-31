@@ -9,10 +9,13 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.bumptech.glide.Glide
+import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.Ejercicio
 import pe.edu.idat.appgynrv.databinding.ItemejerciciosderutinaBinding
 
-class AdapterNivelRutina ( private val listanivelrutinas: List<NivelRutinas>,
-                           private val context: Context
+class AdapterNivelRutina(
+    private var listaEjercicios: List<Ejercicio>,
+    private val context: Context
 ) : RecyclerView.Adapter<AdapterNivelRutina.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemejerciciosderutinaBinding) :
@@ -24,14 +27,20 @@ class AdapterNivelRutina ( private val listanivelrutinas: List<NivelRutinas>,
         return ViewHolder(binding)
     }
 
-    override fun getItemCount() = listanivelrutinas.size
+    override fun getItemCount() = listaEjercicios.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
-            with(listanivelrutinas[position]) {
-                binding.etnameejercicioQ.text = nombreejer
-                binding.etcantejercicio.text = cantidadejer
-                binding.imageView.setImageResource(img)
+            with(listaEjercicios[position]) {
+                binding.etnameejercicioQ.text = nombreEjercicio
+                binding.etcantejercicio.text = descripcionEjercicio
+                // Obtener el identificador del recurso drawable
+                val resourceId = context.resources.getIdentifier(nombreImagen, "drawable", context.packageName)
+
+                // Cargar la imagen utilizando Glide
+                Glide.with(context)
+                    .load(if (resourceId != 0) resourceId else R.drawable.carga) // Usar el icono por defecto si no se encuentra la imagen
+                    .into(binding.imageView)
                 binding.btninfoC.setOnClickListener {
 
                     // Obtener el NavController desde la vista
@@ -41,18 +50,22 @@ class AdapterNivelRutina ( private val listanivelrutinas: List<NivelRutinas>,
 
                 }
                 binding.cvitemejer.setOnClickListener {
-                    Toast.makeText(context, "Haz clip en iniciar rutina", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Haz clic en iniciar rutina", Toast.LENGTH_LONG).show()
                 }
             }
         }
     }
-}
 
-class VerticalSpaceItemDecoration(private val verticalSpaceHeight: Int) : ItemDecoration() {
-    override fun getItemOffsets(
-        outRect: Rect, view: View,
-        parent: RecyclerView, state: RecyclerView.State
-    ) {
-        outRect.bottom = verticalSpaceHeight
+    fun actualizarLista(nuevaLista: List<Ejercicio>) {
+        listaEjercicios = nuevaLista
+        notifyDataSetChanged()
+    }
+    class VerticalSpaceItemDecoration(private val verticalSpaceHeight: Int) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect, view: View,
+            parent: RecyclerView, state: RecyclerView.State
+        ) {
+            outRect.bottom = verticalSpaceHeight
+        }
     }
 }
