@@ -137,6 +137,8 @@
                     android:layout_height="wrap_content"
                     android:background="@color/black"
                     android:inputType="textPassword"
+                    android:maxLength="12"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^+=!"
                     android:textColor="@color/white"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
