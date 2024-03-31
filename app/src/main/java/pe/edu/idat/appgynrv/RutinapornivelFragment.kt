@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.getlistaejercicioResponse
 import pe.edu.idat.appgynrv.Retrofit.services.ejercicioservice
@@ -32,6 +33,10 @@ class RutinapornivelFragment : Fragment() {
         _binding = FragmentRutinapornivelBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        // Obtener el correo electrónico almacenado en SharedPreferences
+        val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", AppCompatActivity.MODE_PRIVATE)
+        val nombre = sharedPreferences.getString("nombre", "")
+
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
             .baseUrl("http://192.168.1.10:9090/")
@@ -45,6 +50,7 @@ class RutinapornivelFragment : Fragment() {
         adapter = AdapterNivelRutina(emptyList(), requireContext())
         binding.rvlistaejerciciosR.layoutManager = LinearLayoutManager(context)
         binding.rvlistaejerciciosR.adapter = adapter
+        binding.etnamerutina.text=nombre
 
         // Realizar la solicitud para obtener la lista de ejercicios
         ejerciciosService.obtenerListaEjercicios().enqueue(object : Callback<getlistaejercicioResponse> {

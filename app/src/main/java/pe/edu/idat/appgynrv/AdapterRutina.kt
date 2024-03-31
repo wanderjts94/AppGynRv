@@ -42,17 +42,10 @@ class AdapterRutina(val listarutinas:List<Rutina>,val context:Context)
                 }
             }
 
-            with(holder) {
-                with(listarutinas[position]) {
-                    binding.tvnombrejer.text = nombre
-                    binding.ivejercicio.setImageResource(img)
-                    binding.cvejercicios.setOnClickListener(View.OnClickListener {
-                        Toast.makeText(context, "Click en Rutina", Toast.LENGTH_LONG).show()
-                    })
 
 
-                }
-            }
+
+
         }
     }
 }
