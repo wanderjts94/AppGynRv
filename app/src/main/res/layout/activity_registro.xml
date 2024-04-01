@@ -357,7 +357,7 @@
                         android:background="@color/black"
                         android:inputType="date"
                         android:textColor="@color/white"
-                        android:digits="0123456789/"
+                        android:digits="0123456789-"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -407,7 +407,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/black"
                         android:inputType="numberDecimal"
-                        android:digits="0123456789"
+                        android:digits="0123456789."
                         android:textColor="@color/white"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -443,7 +443,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/black"
                         android:inputType="numberDecimal"
-                        android:digits="0123456789"
+                        android:digits="0123456789."
                         android:textColor="@color/white"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
