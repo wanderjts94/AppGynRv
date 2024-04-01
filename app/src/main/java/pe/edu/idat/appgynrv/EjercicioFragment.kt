@@ -34,11 +34,12 @@ class EjercicioFragment : Fragment() {
         return view
     }
 
+
     private fun obtenerEjercicios():List<Rutina>{
         val listaEjercicios = ArrayList<Rutina>()
-        listaEjercicios.add(Rutina("Rutina para Principiantes",R.drawable.princi))
-        listaEjercicios.add(Rutina("Rutina para Intermedios",R.drawable.avanzado))
-        listaEjercicios.add(Rutina("Rutina para Avanzados",R.drawable.medio))
+        listaEjercicios.add(Rutina("Nivel Básico",R.drawable.princi))
+        listaEjercicios.add(Rutina("Nivel Medio",R.drawable.avanzado))
+        listaEjercicios.add(Rutina("Nivel Avanzado",R.drawable.medio))
         return listaEjercicios
     }
 

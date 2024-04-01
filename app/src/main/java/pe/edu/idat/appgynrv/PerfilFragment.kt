@@ -28,16 +28,12 @@ class PerfilFragment : Fragment() {
     init {
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.21:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.48:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         perfilService = retrofit.create(pefilservice::class.java)
 
-        binding.tvlcerrar.setOnClickListener {
-            val intent = Intent(requireContext(), LoginActivity::class.java)
-            startActivity(intent)
-        }
     }
 
 
@@ -45,6 +41,7 @@ class PerfilFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflar el layout del fragmento usando el objeto LayoutInflater
         binding = FragmentPerfilBinding.inflate(inflater, container, false)
 
         // Obtener el correo electrónico almacenado en SharedPreferences
@@ -58,13 +55,16 @@ class PerfilFragment : Fragment() {
             Log.i("Perfil Obtenido por Correo",obtenerPerfilPorCorreo(correo).toString())
         }
 
+        // Configurar el OnClickListener para el botón de guardar
         binding.btnGuardar.setOnClickListener {
             val correo = binding.etCorreo.text.toString()
             actualizarPerfil(correo)
         }
 
+        // Devolver la vista raíz del fragmento
         return binding.root
     }
+
 
     private fun obtenerPerfilPorCorreo(correo: String) {
         val call = perfilService.obtenerPerfilPorCorreo(correo)

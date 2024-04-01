@@ -33,7 +33,7 @@ class AdapterNivelRutina(
         with(holder) {
             with(listaEjercicios[position]) {
                 binding.etnameejercicioQ.text = nombreEjercicio
-                binding.etcantejercicio.text = descripcionEjercicio
+                binding.etcantejercicio.text = repeticiones.toString()
                 // Obtener el identificador del recurso drawable
                 val resourceId = context.resources.getIdentifier(nombreImagen, "drawable", context.packageName)
 
