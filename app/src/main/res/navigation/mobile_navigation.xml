@@ -129,5 +129,10 @@
         android:name="pe.edu.idat.appgynrv.LoginActivity"
         android:label="fragment_felicidades"
         tools:layout="@layout/fragment_felicidades" />
+    <fragment
+        android:id="@+id/realizarPagoFragment"
+        android:name="pe.edu.idat.appgynrv.RealizarPagoFragment"
+        android:label="fragment_realizar_pago"
+        tools:layout="@layout/fragment_realizar_pago" />
 </navigation>
 
