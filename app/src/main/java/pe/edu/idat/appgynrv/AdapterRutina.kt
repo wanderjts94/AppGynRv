@@ -41,11 +41,6 @@ class AdapterRutina(val listarutinas:List<Rutina>,val context:Context)
                     navController.navigate(R.id.rutinapornivelFragment)
                 }
             }
-
-
-
-
-
         }
     }
 }

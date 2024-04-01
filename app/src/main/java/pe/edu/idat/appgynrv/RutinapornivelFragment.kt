@@ -39,7 +39,7 @@ class RutinapornivelFragment : Fragment() {
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/")
+            .baseUrl("http://192.168.1.48:9090/api/ejercicios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -53,6 +53,7 @@ class RutinapornivelFragment : Fragment() {
         binding.etnamerutina.text=nombre
 
         // Realizar la solicitud para obtener la lista de ejercicios
+        /*
         ejerciciosService.obtenerListaEjercicios().enqueue(object : Callback<getlistaejercicioResponse> {
             override fun onResponse(call: Call<getlistaejercicioResponse>, response: Response<getlistaejercicioResponse>) {
                 if (response.isSuccessful) {
@@ -69,6 +70,8 @@ class RutinapornivelFragment : Fragment() {
                 Toast.makeText(requireContext(), "Error de conexión. Por favor, inténtalo de nuevo más tarde.", Toast.LENGTH_SHORT).show()
             }
         })
+
+         */
 
         return view
     }
