@@ -85,4 +85,11 @@
     <string name="btnequipoentre">E.Entrenamiento</string>
     <string name="botoncompra1">Comprar</string>
     <string name="botonpremium">Hazte Premium</string>
+    <string name="etprecio">Precio:</string>
+    <string name="etinfprecio">aqui el precio</string>
+    <string name="tvcant">0</string>
+    <string name="noprt">"Producto: "</string>
+    <string name="etitprecioD">"Precio: "</string>
+    <string name="titDescripD">"Descripcion: "</string>
+    <string name="cero">0</string>
 </resources>

@@ -35,11 +35,16 @@ class TiendaFragment : Fragment() {
         binding.rvEntrenamiento.layoutManager = GridLayoutManager(context, 2)
         binding.rvEntrenamiento.adapter = adapterEntrenamiento
 
-        // Configurar adaptadores y datos para RecyclerView de productos
+        // Configurar adaptadores y datos para RecyclerView de otros productos
         val listaItemOtros = obtenerItemOtros()
         val adapterOtros = AdapterTienda(listaItemOtros, requireContext())
         binding.rvOtros.layoutManager = GridLayoutManager(context, 2)
         binding.rvOtros.adapter = adapterOtros
+
+        // Mostrar inicialmente el RecyclerView de productos y ocultar los demás
+        binding.rvProductos.visibility = View.VISIBLE
+        binding.rvEntrenamiento.visibility = View.GONE
+        binding.rvOtros.visibility = View.GONE
 
         // Manejar clics en botones para cambiar visibilidad de RecyclerViews
         binding.btnsuplemento.setOnClickListener {
@@ -59,29 +64,31 @@ class TiendaFragment : Fragment() {
             binding.rvEntrenamiento.visibility = View.GONE
             binding.rvOtros.visibility = View.VISIBLE
         }
+
+        
     }
 
     private fun obtenerItemProductos(): List<Tienda> {
         val listaItemProductos = ArrayList<Tienda>()
-        listaItemProductos.add(Tienda(R.drawable.vitaminas,"Producto:Vitamina Embace ","Precio:20","vitamina para agarrar masa"))
-        listaItemProductos.add(Tienda(R.drawable.vitaminas2,"Producto:Vitamina Embace ","Precio:15","vitamina para agarrar masa"))
-        listaItemProductos.add(Tienda(R.drawable.vitaminas3,"Producto:Vitamina Embace ","Precio:20","vitamina para agarrar masa"))
+        listaItemProductos.add(Tienda(R.drawable.vitaminas,"Vitamina Embace 1L ","20","vitamina para agarrar masa"))
+        listaItemProductos.add(Tienda(R.drawable.vitaminas2,"Vitamina Embace 2L","15","vitamina para agarrar masa"))
+        listaItemProductos.add(Tienda(R.drawable.vitaminas3,"Vitamina Embace Sobre","20","vitamina para agarrar masa"))
         return listaItemProductos
     }
 
     private fun obtenerItemEntrenamiento(): List<Tienda> {
         val listaItemEntrenamiento = ArrayList<Tienda>()
-        listaItemEntrenamiento.add(Tienda(R.drawable.mancuernas,"Producto: Mancuernas 5kg","Precio:15","Instrumento para aumentar fuerza"))
-        listaItemEntrenamiento.add(Tienda(R.drawable.maquina1,"Producto:Home GYM ","Precio:499","GYM en casa"))
-        listaItemEntrenamiento.add(Tienda(R.drawable.maquina2,"Producto:Abdominales Home ","Precio:15","Maquinaria para trabajar abdominales"))
+        listaItemEntrenamiento.add(Tienda(R.drawable.mancuernas,"Mancuernas 5kg","15","Instrumento para aumentar fuerza"))
+        listaItemEntrenamiento.add(Tienda(R.drawable.maquina1,"Home GYM ","499","GYM en casa"))
+        listaItemEntrenamiento.add(Tienda(R.drawable.maquina2,"Abdominales Home ","15","Maquinaria para trabajar abdominales"))
         return listaItemEntrenamiento
     }
 
     private fun obtenerItemOtros(): List<Tienda> {
         val listaItemOtros = ArrayList<Tienda>()
-        listaItemOtros.add(Tienda(R.drawable.sporade1,"Producto: Mancuernas 5kg","Precio:15","Instrumento para aumentar fuerza"))
-        listaItemOtros.add(Tienda(R.drawable.sporade2,"Producto:Home GYM ","Precio:499","GYM en casa"))
-        listaItemOtros.add(Tienda(R.drawable.sporade3,"Producto:Abdominales Home ","Precio:15","Maquinaria para trabajar abdominales"))
+        listaItemOtros.add(Tienda(R.drawable.sporade1,"Mancuernas 5kg","15","Instrumento para aumentar fuerza"))
+        listaItemOtros.add(Tienda(R.drawable.sporade2,"Home GYM ","499","GYM en casa"))
+        listaItemOtros.add(Tienda(R.drawable.sporade3,"Abdominales Home ","15","Maquinaria para trabajar abdominales"))
         return listaItemOtros
     }
 

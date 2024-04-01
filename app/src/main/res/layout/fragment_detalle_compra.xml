@@ -131,6 +131,29 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp" />
 
+
+                    <TextView
+                        android:id="@+id/etprecio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etprecio"
+                        android:textColor="@color/primario"
+                        android:textSize="25dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/etnunprecio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/etinfprecio"
+                        android:textColor="@color/purple_200"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+
+
                     <TextView
                         android:id="@+id/etcantidad"
                         android:layout_width="match_parent"
@@ -139,22 +162,29 @@
                         android:textColor="@color/primario"
                         android:textSize="25dp"
                         android:textStyle="bold"/>
+
                     <View
                         android:layout_width="wrap_content"
                         android:layout_height="20dp" />
 
-                    <NumberPicker
-                        android:id="@+id/npnumerocant"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etnumcantidad"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:background="@color/purple_200"
-                        android:textSize="24sp" />
+                        android:hint="@string/tvcant"
+                        android:minHeight="48dp"
+                        android:numeric="integer"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></com.google.android.material.textfield.TextInputEditText>
+
 
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="15dp"/>
+                        android:layout_height="20dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnAgregarC"
