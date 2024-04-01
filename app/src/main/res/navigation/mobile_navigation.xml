@@ -98,13 +98,15 @@
         android:id="@+id/carritoCompraFragment"
         android:name="pe.edu.idat.appgynrv.CarritoCompraFragment"
         android:label="fragment_carrito_compra"
-        tools:layout="@layout/fragment_carrito_compra" />
+        tools:layout="@layout/fragment_carrito_compra" >
+    </fragment>
 
     <fragment
         android:id="@+id/detalleCompraFragment"
         android:name="pe.edu.idat.appgynrv.DetalleCompraFragment"
         android:label="fragment_detalle_compra"
-        tools:layout="@layout/fragment_detalle_compra" />
+        tools:layout="@layout/fragment_detalle_compra" >
+    </fragment>
     <fragment
         android:id="@+id/calendarioFragment"
         android:name="pe.edu.idat.appgynrv.CalendarioFragment"

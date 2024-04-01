@@ -85,15 +85,16 @@
                 android:layout_height="wrap_content">
 
                 <ImageButton
-                    android:id="@+id/ivcarrito"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/carritoshop"
-                    android:background="@color/black"
-                    android:layout_marginTop="20dp"
+                    android:id="@+id/btncarrito"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/primario"
                     android:layout_alignParentEnd="true"
-                    android:padding="20dp"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    android:contentDescription="@string/btncart"
+                    android:src="@drawable/baseline_shopping_cart_24" />
+
+
 
                 <!-- RecyclerView para productos -->
                 <androidx.recyclerview.widget.RecyclerView

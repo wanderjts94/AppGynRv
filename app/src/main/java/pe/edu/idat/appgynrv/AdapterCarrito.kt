@@ -1,16 +1,14 @@
 package pe.edu.idat.appgynrv
 
 import android.content.Context
-import android.graphics.Rect
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.idat.appgynrv.databinding.ItemcarritotiendaBinding
 
-class AdapterCarrito(val listacarrito: List<Datoscarrito>,val context : Context)
-    : RecyclerView.Adapter<AdapterCarrito.ViewHolder>() {
+class AdapterCarrito(val listacarrito: List<Datoscarrito>, val context: Context) :
+    RecyclerView.Adapter<AdapterCarrito.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemcarritotiendaBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -28,12 +26,12 @@ class AdapterCarrito(val listacarrito: List<Datoscarrito>,val context : Context)
             with(listacarrito[position]) {
                 binding.etnombreproductosc.text = nombreProduct
                 binding.etprecio.text = precio
+                binding.etnumerocant.text = cantidad
                 binding.ivimagenC.setImageResource(img)
-                binding.btnEdit.setOnClickListener(View.OnClickListener {
-                    Toast.makeText(context, "se quiere consumir servicio put", Toast.LENGTH_LONG).show()
-                })
+                binding.btnEdit.setOnClickListener {
+                    Toast.makeText(context, "Se quiere consumir el servicio put", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }
 }
-

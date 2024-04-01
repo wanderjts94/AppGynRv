@@ -28,54 +28,93 @@
             android:id="@+id/tvnombresuple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
             android:textAlignment="textStart"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ettitiproductoD"
             app:layout_constraintTop_toBottomOf="@+id/ivitemtienda" />
 
         <TextView
             android:id="@+id/tvpreciosuple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
             android:textAlignment="textStart"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/titdprecioD"
             app:layout_constraintTop_toBottomOf="@+id/tvnombresuple" />
 
         <TextView
             android:id="@+id/tvdescripcionsuple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
             android:textAlignment="textStart"
             android:textColor="#F4F1F1"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/titdescripD"
             app:layout_constraintTop_toBottomOf="@+id/tvpreciosuple" />
 
         <Button
-            android:id="@+id/btncomprarsuple"
+            android:id="@+id/btncomprarP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
             android:text="Button"
             app:icon="@drawable/baseline_shopping_cart_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvdescripcionsuple"
+            app:layout_constraintTop_toBottomOf="@+id/titdescripD"
             tools:text="@string/botoncompra1" />
+
+        <TextView
+            android:id="@+id/ettitiproductoD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/noprt"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivitemtienda" />
+
+        <TextView
+            android:id="@+id/titdprecioD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/etitprecioD"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ettitiproductoD" />
+
+        <TextView
+            android:id="@+id/titdescripD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/titDescripD"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titdprecioD" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
