@@ -34,6 +34,13 @@ class CarritoCompraFragment : Fragment() {
         binding.btnimgcarritoc.setOnClickListener {
             findNavController().navigate(R.id.tiendaFragment)
         }
+        binding.btnpagar.setOnClickListener {
+            val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.remove("datosparacarrito") // Eliminar la entrada "datosparacarrito" de SharedPreferences
+            editor.apply() // Aplicar los cambios
+            adapter.actualizarProductos(emptyList()) // Limpiar la lista de productos en el adaptador
+        }
         // Obtener y mostrar los productos del carrito
         mostrarProductosEnCarrito()
     }
@@ -47,13 +54,14 @@ class CarritoCompraFragment : Fragment() {
             val productos = datosCarrito.split(";")
             Log.d("listaproducto", "los productos: $productos")
             val listaDeProductos = mutableListOf<Datoscarrito>()
-            Log.d("listaproducto", "los lista productos): $listaDeProductos")
+
 
             for (productoData in productos) {
                 val dataArray = productoData.split(",")
                 if (dataArray.size >= 4) {
                     val producto = Datoscarrito(dataArray[1], dataArray[2], dataArray[3], dataArray[0].toInt())
                     listaDeProductos.add(producto)
+                    Log.d("listaproducto", "los lista productos): $listaDeProductos")
                 }
             }
             adapter.actualizarProductos(listaDeProductos)
