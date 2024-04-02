@@ -2,6 +2,7 @@ package pe.edu.idat.appgynrv
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.Ejercicio
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.getlistaejercicioResponse
 import pe.edu.idat.appgynrv.Retrofit.services.ejercicioservice
 import pe.edu.idat.appgynrv.databinding.FragmentRutinapornivelBinding
@@ -39,7 +41,7 @@ class RutinapornivelFragment : Fragment() {
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.48:9090/api/ejercicios/")
+            .baseUrl("http://192.168.1.48:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -50,28 +52,28 @@ class RutinapornivelFragment : Fragment() {
         adapter = AdapterNivelRutina(emptyList(), requireContext())
         binding.rvlistaejerciciosR.layoutManager = LinearLayoutManager(context)
         binding.rvlistaejerciciosR.adapter = adapter
-        binding.etnamerutina.text=nombre
+        binding.etnamerutina.text="Nivel " + nombre!!
 
-        // Realizar la solicitud para obtener la lista de ejercicios
-        /*
-        ejerciciosService.obtenerListaEjercicios().enqueue(object : Callback<getlistaejercicioResponse> {
-            override fun onResponse(call: Call<getlistaejercicioResponse>, response: Response<getlistaejercicioResponse>) {
+        ejerciciosService.obtenerListaEjercicios(nombre).enqueue(object : Callback<List<Ejercicio>> {
+            override fun onResponse(call: Call<List<Ejercicio>>, response: Response<List<Ejercicio>>) {
                 if (response.isSuccessful) {
-                    val listaEjercicios = response.body()?.ejercicios
+                    val listaEjercicios = response.body()
                     listaEjercicios?.let {
                         adapter.actualizarLista(it)
                     }
+                    Log.i("Lista de ejercicio", listaEjercicios.toString())
+                    Log.i("Url completo", ejerciciosService.obtenerListaEjercicios(nombre).toString())
                 } else {
                     Toast.makeText(requireContext(), "Error al obtener la lista de ejercicios", Toast.LENGTH_SHORT).show()
                 }
             }
 
-            override fun onFailure(call: Call<getlistaejercicioResponse>, t: Throwable) {
+            override fun onFailure(call: Call<List<Ejercicio>>, t: Throwable) {
                 Toast.makeText(requireContext(), "Error de conexión. Por favor, inténtalo de nuevo más tarde.", Toast.LENGTH_SHORT).show()
+                Log.e("Mensaje de error", t.message.toString())
+                Log.i("Nombre de la Rutina Seleccionada", nombre.toString())
             }
         })
-
-         */
 
         return view
     }
