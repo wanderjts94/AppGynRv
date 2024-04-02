@@ -28,7 +28,7 @@ class PerfilFragment : Fragment() {
     init {
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.48:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

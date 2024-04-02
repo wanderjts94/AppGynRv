@@ -2,6 +2,7 @@ package pe.edu.idat.appgynrv
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,23 +25,20 @@ class DetalleCompraFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Retrieve data from SharedPreferences
         val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val data = sharedPreferences.getString("guardardatos", "")
 
-        // Split the data string
         val dataArray = data?.split(",") ?: emptyList()
 
-        // Set data to views
         if (dataArray.size >= 4) {
             binding.ivimagenproduct.setImageResource(dataArray[0].toInt())
             binding.etnombreproducto.text = dataArray[1]
             binding.etnunprecio.text = dataArray[2]
             binding.etinfodescript.text = dataArray[3]
+            Log.d("DetalleCompraFragment", "Datos del producto: $dataArray")
         }
 
         binding.btnAgregarC.setOnClickListener {
-            // Save product data to SharedPreferences
             val nombreProducto = binding.etnombreproducto.text.toString()
             val precio = binding.etnunprecio.text.toString()
             val cantidad = binding.etnumcantidad.text.toString()
@@ -51,7 +49,8 @@ class DetalleCompraFragment : Fragment() {
             editor.putString("datosparacarrito", dataToSave)
             editor.apply()
 
-            // Navigate to CarritoCompraFragment
+            Log.d("DetalleCompraFragment", "Datos guardados en SharedPreferences (datosparacarrito): $dataToSave")
+
             view.findNavController().navigate(R.id.carritoCompraFragment)
         }
 
