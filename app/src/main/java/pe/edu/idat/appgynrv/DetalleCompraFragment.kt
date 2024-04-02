@@ -1,5 +1,4 @@
 package pe.edu.idat.appgynrv
-
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -45,11 +44,22 @@ class DetalleCompraFragment : Fragment() {
             val img = dataArray[0].toInt()
 
             val editor = sharedPreferences.edit()
-            val dataToSave = "$img,$nombreProducto,$precio,$cantidad"
-            editor.putString("datosparacarrito", dataToSave)
+
+            // Obtener los datos existentes y agregar el nuevo producto
+            val datosCarritoActual = sharedPreferences.getString("datosparacarrito", "")
+            val nuevoProducto = "$img,$nombreProducto,$precio,$cantidad"
+
+            // Concatenar el nuevo producto al final de los datos existentes
+            val nuevosDatos = if (datosCarritoActual.isNullOrEmpty()) {
+                nuevoProducto
+            } else {
+                "$datosCarritoActual;$nuevoProducto"
+            }
+
+            editor.putString("datosparacarrito", nuevosDatos)
             editor.apply()
 
-            Log.d("DetalleCompraFragment", "Datos guardados en SharedPreferences (datosparacarrito): $dataToSave")
+            Log.d("DetalleCompraFragment", "Datos guardados en SharedPreferences (datosparacarrito): $nuevosDatos")
 
             view.findNavController().navigate(R.id.carritoCompraFragment)
         }
