@@ -45,7 +45,9 @@ class CarritoCompraFragment : Fragment() {
         if (!datosCarrito.isNullOrEmpty()) {
             Log.d("CarritoCompraFragment", "Datos guardados en SharedPreferences (datosparacarrito): $datosCarrito")
             val productos = datosCarrito.split(";")
+            Log.d("listaproducto", "los productos: $productos")
             val listaDeProductos = mutableListOf<Datoscarrito>()
+            Log.d("listaproducto", "los lista productos): $listaDeProductos")
 
             for (productoData in productos) {
                 val dataArray = productoData.split(",")
