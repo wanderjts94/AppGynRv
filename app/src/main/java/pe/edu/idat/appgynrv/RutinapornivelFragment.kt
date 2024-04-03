@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.Ejercicio
-import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.getlistaejercicioResponse
 import pe.edu.idat.appgynrv.Retrofit.services.ejercicioservice
 import pe.edu.idat.appgynrv.databinding.FragmentRutinapornivelBinding
 import retrofit2.Call
@@ -68,7 +67,6 @@ class RutinapornivelFragment : Fragment() {
             // Navegar al fragmento EjercicioProcesoFragment con los argumentos
             findNavController().navigate(R.id.ejercicioProcesoFragment, args)
         }
-
 
         ejerciciosService.obtenerListaEjercicios(nombre).enqueue(object : Callback<List<Ejercicio>> {
             override fun onResponse(call: Call<List<Ejercicio>>, response: Response<List<Ejercicio>>) {
