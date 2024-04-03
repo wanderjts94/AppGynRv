@@ -1,20 +1,23 @@
-package pe.edu.idat.appgynrv
+package pe.edu.idat.appgynrv.Subinterfaces
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import pe.edu.idat.appgynrv.R
 
-class EjercicioProcesoFragment : Fragment() {
 
-    private lateinit var btnStartPause: Button
-    private lateinit var txtTimeElapsed: TextView
+
+
+class EstiramientoPechoProcesoFragment : Fragment() {
+    private lateinit var btnStartPause5: Button
+    private lateinit var txtTimeElapsed5: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var timer: CountDownTimer
 
@@ -25,13 +28,14 @@ class EjercicioProcesoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_ejercicio_proceso, container, false)
-
-        btnStartPause = view.findViewById(R.id.btnStartPause)
-        txtTimeElapsed = view.findViewById(R.id.txtTimeElapsed)
+        // Inflate the layout for this fragment
+        //return inflater.inflate(R.layout.fragment_estiramiento_pecho_proceso, container, false)
+        val view=inflater.inflate(R.layout.fragment_estiramiento_pecho_proceso,container,false)
+        btnStartPause5 = view.findViewById(R.id.btnStartPause5)
+        txtTimeElapsed5 = view.findViewById(R.id.txtTimeElapsed5)
         progressBar = view.findViewById(R.id.progressBar)
 
-        btnStartPause.setOnClickListener {
+        btnStartPause5.setOnClickListener {
             if (isTimerRunning) {
                 pauseTimer()
             } else {
@@ -40,39 +44,40 @@ class EjercicioProcesoFragment : Fragment() {
         }
 
         // Obtener los argumentos pasados desde RutinapornivelFragment
-        val nombreEjercicio = arguments?.getString("nombreEjercicio") ?: ""
-        val numRepeticiones = arguments?.getInt("numRepeticiones") ?: 0
+        val nombreEjercicio5 = arguments?.getString("nombreEjercicio5") ?: ""
+        val numRepeticiones5 = arguments?.getInt("numRepeticiones5") ?: 0
 
         // Mostrar los valores en las cajas de texto correspondientes
-        val tvNombreEjercicio = view.findViewById<TextView>(R.id.tvnombrejer1)
-        val tvNumRepeticiones = view.findViewById<TextView>(R.id.tvnumrepeticiones1)
-        tvNombreEjercicio.text = nombreEjercicio
-        tvNumRepeticiones.text = numRepeticiones.toString()
-
-
+        val tvNombreEjercicio5 = view.findViewById<TextView>(R.id.tvnombrejer5)
+        val tvNumRepeticiones5 = view.findViewById<TextView>(R.id.tvnumrepeticiones5)
+        tvNombreEjercicio5.text = nombreEjercicio5
+        tvNumRepeticiones5.text = numRepeticiones5.toString()
         return view
     }
 
     private fun startTimer() {
-        timer = object : CountDownTimer(MAX_TIME, INTERVAL) {
+        timer = object : CountDownTimer(
+            MAX_TIME,
+            INTERVAL
+        ) {
             override fun onTick(millisUntilFinished: Long) {
                 timeElapsedInMillis = MAX_TIME - millisUntilFinished
                 updateTimerUI()
             }
 
             override fun onFinish() {
-                findNavController().navigate(R.id.preFelicidadesFragment)
+                findNavController().navigate(R.id.preFelicidadesEjer5Fragment)
             }
         }.start()
 
         isTimerRunning = true
-        btnStartPause.text = getString(R.string.pause)
+        btnStartPause5.text = getString(R.string.pause)
     }
 
     private fun pauseTimer() {
         timer.cancel()
         isTimerRunning = false
-        btnStartPause.text = getString(R.string.start)
+        btnStartPause5.text = getString(R.string.start)
     }
 
     private fun updateTimerUI() {
@@ -87,14 +92,13 @@ class EjercicioProcesoFragment : Fragment() {
             seconds % 60
         )
 
-        txtTimeElapsed.text = timeString
+        txtTimeElapsed5.text = timeString
 
         val progress = ((MAX_TIME - timeElapsedInMillis) * 100 / MAX_TIME).toInt()
         progressBar.progress = progress
     }
-
     companion object {
-        private const val MAX_TIME = 20000L  // 20 segundos
+        private const val MAX_TIME = 20000L
         private const val INTERVAL = 1000L // 1 second
     }
 }

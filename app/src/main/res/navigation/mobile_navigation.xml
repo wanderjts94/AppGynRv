@@ -134,5 +134,45 @@
         android:name="pe.edu.idat.appgynrv.RealizarPagoFragment"
         android:label="fragment_realizar_pago"
         tools:layout="@layout/fragment_realizar_pago" />
+    <fragment
+        android:id="@+id/flexionesEstiramientoProcesoFragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.FlexionesEstiramientoProcesoFragment"
+        android:label="fragment_flexiones_estiramiento_proceso"
+        tools:layout="@layout/fragment_flexiones_estiramiento_proceso" />
+    <fragment
+        android:id="@+id/preFelicidadesEjer2Fragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.PreFelicidadesEjer2Fragment"
+        android:label="fragment_pre_felicidades_ejer2"
+        tools:layout="@layout/fragment_pre_felicidades_ejer2" />
+    <fragment
+        android:id="@+id/saltoEnTijeraProcesoFragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.SaltoEnTijeraProcesoFragment"
+        android:label="fragment_salto_en_tijera_proceso"
+        tools:layout="@layout/fragment_salto_en_tijera_proceso" />
+    <fragment
+        android:id="@+id/preFelicidadesEjer3Fragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.PreFelicidadesEjer3Fragment"
+        android:label="fragment_pre_felicidades_ejer3"
+        tools:layout="@layout/fragment_pre_felicidades_ejer3" />
+    <fragment
+        android:id="@+id/estiramientoCobraProcesoFragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.EstiramientoCobraProcesoFragment"
+        android:label="fragment_estiramiento_cobra_proceso"
+        tools:layout="@layout/fragment_estiramiento_cobra_proceso" />
+    <fragment
+        android:id="@+id/preFelicidadesEjer4Fragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.PreFelicidadesEjer4Fragment"
+        android:label="fragment_pre_felicidades_ejer4"
+        tools:layout="@layout/fragment_pre_felicidades_ejer4" />
+    <fragment
+        android:id="@+id/estiramientoPechoProcesoFragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.EstiramientoPechoProcesoFragment"
+        android:label="fragment_estiramiento_pecho_proceso"
+        tools:layout="@layout/fragment_estiramiento_pecho_proceso" />
+    <fragment
+        android:id="@+id/preFelicidadesEjer5Fragment"
+        android:name="pe.edu.idat.appgynrv.Subinterfaces.PreFelicidadesEjer5Fragment"
+        android:label="fragment_pre_felicidades_ejer5"
+        tools:layout="@layout/fragment_pre_felicidades_ejer5" />
 </navigation>
 

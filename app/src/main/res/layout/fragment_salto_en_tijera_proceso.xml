@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/entrenamientoo"
-    tools:context=".EjercicioProcesoFragment">
+    tools:context=".Subinterfaces.SaltoEnTijeraProcesoFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +27,6 @@
             android:src="@drawable/ejerciciosv2"/>
 
     </LinearLayout>
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +43,7 @@
             android:padding="28dp">
 
             <TextView
-                android:id="@+id/tvnombrejer1"
+                android:id="@+id/tvnombrejer3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -55,7 +54,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvnumrepeticiones1"
+                android:id="@+id/tvnumrepeticiones3"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -63,7 +62,6 @@
                 android:text="(Numero de repeticiones)"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-
 
             <View
                 android:layout_width="wrap_content"
@@ -94,7 +92,7 @@
                         style="?android:attr/progressBarStyleHorizontal"/>
 
                     <TextView
-                        android:id="@+id/txtTimeElapsed"
+                        android:id="@+id/txtTimeElapsed3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -119,18 +117,15 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnStartPause"
+                android:id="@+id/btnStartPause3"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="INICIO"
                 app:cornerRadius="32dp" />
-
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"/>
 
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
 </RelativeLayout>

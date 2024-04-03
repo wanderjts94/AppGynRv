@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/entrenamientoo"
-    tools:context=".EjercicioProcesoFragment">
+    tools:context=".Subinterfaces.EstiramientoPechoProcesoFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             android:padding="28dp">
 
             <TextView
-                android:id="@+id/tvnombrejer1"
+                android:id="@+id/tvnombrejer5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -55,7 +55,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvnumrepeticiones1"
+                android:id="@+id/tvnumrepeticiones5"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -63,7 +63,6 @@
                 android:text="(Numero de repeticiones)"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-
 
             <View
                 android:layout_width="wrap_content"
@@ -94,7 +93,7 @@
                         style="?android:attr/progressBarStyleHorizontal"/>
 
                     <TextView
-                        android:id="@+id/txtTimeElapsed"
+                        android:id="@+id/txtTimeElapsed5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -119,7 +118,7 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnStartPause"
+                android:id="@+id/btnStartPause5"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="INICIO"
@@ -132,5 +131,7 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+
 
 </RelativeLayout>

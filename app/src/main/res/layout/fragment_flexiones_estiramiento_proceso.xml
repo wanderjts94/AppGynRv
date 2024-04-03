@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/entrenamientoo"
-    tools:context=".EjercicioProcesoFragment">
+    tools:context=".Subinterfaces.FlexionesEstiramientoProcesoFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,14 +18,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_above="@+id/card_view"
+        android:layout_above="@+id/card_view2"
         android:padding="28dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ejerciciosv2"/>
-
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -34,7 +33,7 @@
         android:layout_alignParentBottom="true"
         app:cardCornerRadius="28dp"
         android:layout_marginBottom="-20dp"
-        android:id="@+id/card_view">
+        android:id="@+id/card_view2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,9 +41,8 @@
             android:orientation="vertical"
             android:background="@color/black"
             android:padding="28dp">
-
             <TextView
-                android:id="@+id/tvnombrejer1"
+                android:id="@+id/tvnombrejer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -53,9 +51,8 @@
                 android:textColor="@color/primario"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
             <TextView
-                android:id="@+id/tvnumrepeticiones1"
+                android:id="@+id/tvnumrepeticiones2"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -63,8 +60,6 @@
                 android:text="(Numero de repeticiones)"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-
-
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
@@ -94,7 +89,7 @@
                         style="?android:attr/progressBarStyleHorizontal"/>
 
                     <TextView
-                        android:id="@+id/txtTimeElapsed"
+                        android:id="@+id/txtTimeElapsed2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -119,7 +114,7 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnStartPause"
+                android:id="@+id/btnStartPause2"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="INICIO"
@@ -128,9 +123,11 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"/>
-
         </LinearLayout>
 
+
+
     </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>
