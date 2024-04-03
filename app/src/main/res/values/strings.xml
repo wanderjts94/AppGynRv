@@ -92,4 +92,7 @@
     <string name="etitprecioD">"Precio: "</string>
     <string name="titDescripD">"Descripcion: "</string>
     <string name="cero">0</string>
+    <string name="btborra">boton para quitar un item</string>
+    <string name="valPrecio">Precio:</string>
+    <string name="numval">0.00</string>
 </resources>
