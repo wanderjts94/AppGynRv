@@ -1,7 +1,6 @@
 package pe.edu.idat.appgynrv.Retrofit.services
 
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.Ejercicio
-import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.getlistaejercicioResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
