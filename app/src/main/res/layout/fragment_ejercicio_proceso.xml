@@ -44,16 +44,18 @@
             android:padding="28dp">
 
             <TextView
+                android:id="@+id/tvnombrejer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(Nombre de ejercicio)"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
+                android:text="(Nombre de ejercicio)"
                 android:textColor="@color/primario"
                 android:textSize="25sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvnumrepeticiones1"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"

@@ -1,60 +1,45 @@
 package pe.edu.idat.appgynrv.Subinterfaces
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import pe.edu.idat.appgynrv.R
+import pe.edu.idat.appgynrv.databinding.FragmentPreFelicidadesEjer2Binding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PreFelicidadesEjer2Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PreFelicidadesEjer2Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    private var _binding:FragmentPreFelicidadesEjer2Binding?= null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pre_felicidades_ejer2, container, false)
+        //return inflater.inflate(R.layout.fragment_pre_felicidades_ejer2, container, false)
+        _binding= FragmentPreFelicidadesEjer2Binding.inflate(inflater,container,false)
+        val view= binding.root
+        binding.btnSiguiente2.setOnClickListener{
+            // Obtener el nombre y número de repeticiones del segundo ejercicio
+            val nombreEjercicio3 = "Salto en Tijeras"
+            val numRepeticiones3 = 8 // Por ejemplo, obtén el número de repeticiones de algún lugar
+
+            // Crear un Bundle para pasar los argumentos al fragmento EjercicioProceso2Fragment
+            val args = Bundle().apply {
+                putString("nombreEjercicio3", nombreEjercicio3)
+                putInt("numRepeticiones3", numRepeticiones3)
+            }
+            // Navegar al fragmento EjercicioProceso2Fragment con los argumentos
+            findNavController().navigate(R.id.saltoEnTijeraProcesoFragment,args)
+        }
+
+        return view
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PreFelicidadesEjer2Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PreFelicidadesEjer2Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

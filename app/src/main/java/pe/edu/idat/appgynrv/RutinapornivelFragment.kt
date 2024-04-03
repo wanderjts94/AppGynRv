@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.Ejercicio
 import pe.edu.idat.appgynrv.Retrofit.models.ejercicios.getlistaejercicioResponse
@@ -53,6 +54,21 @@ class RutinapornivelFragment : Fragment() {
         binding.rvlistaejerciciosR.layoutManager = LinearLayoutManager(context)
         binding.rvlistaejerciciosR.adapter = adapter
         binding.etnamerutina.text="Nivel " + nombre!!
+
+        binding.btnInicio.setOnClickListener {
+            // Obtener el nombre del ejercicio y el número de repeticiones
+            val nombreEjercicio = "Flexiones"
+            val numRepeticiones = 10 // Por ejemplo, obtén el número de repeticiones de algún lugar
+
+            // Crear un Bundle para pasar los argumentos
+            val args = Bundle()
+            args.putString("nombreEjercicio", nombreEjercicio)
+            args.putInt("numRepeticiones", numRepeticiones)
+
+            // Navegar al fragmento EjercicioProcesoFragment con los argumentos
+            findNavController().navigate(R.id.ejercicioProcesoFragment, args)
+        }
+
 
         ejerciciosService.obtenerListaEjercicios(nombre).enqueue(object : Callback<List<Ejercicio>> {
             override fun onResponse(call: Call<List<Ejercicio>>, response: Response<List<Ejercicio>>) {

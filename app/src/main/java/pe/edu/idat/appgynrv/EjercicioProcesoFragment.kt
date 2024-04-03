@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 class EjercicioProcesoFragment : Fragment() {
 
@@ -38,6 +39,17 @@ class EjercicioProcesoFragment : Fragment() {
             }
         }
 
+        // Obtener los argumentos pasados desde RutinapornivelFragment
+        val nombreEjercicio = arguments?.getString("nombreEjercicio") ?: ""
+        val numRepeticiones = arguments?.getInt("numRepeticiones") ?: 0
+
+        // Mostrar los valores en las cajas de texto correspondientes
+        val tvNombreEjercicio = view.findViewById<TextView>(R.id.tvnombrejer1)
+        val tvNumRepeticiones = view.findViewById<TextView>(R.id.tvnumrepeticiones1)
+        tvNombreEjercicio.text = nombreEjercicio
+        tvNumRepeticiones.text = numRepeticiones.toString()
+
+
         return view
     }
 
@@ -49,8 +61,7 @@ class EjercicioProcesoFragment : Fragment() {
             }
 
             override fun onFinish() {
-                timeElapsedInMillis = MAX_TIME
-                updateTimerUI()
+                findNavController().navigate(R.id.preFelicidadesFragment)
             }
         }.start()
 
@@ -83,7 +94,7 @@ class EjercicioProcesoFragment : Fragment() {
     }
 
     companion object {
-        private const val MAX_TIME = 600000L // 10 minutes
+        private const val MAX_TIME = 20000L  // 20 segundos
         private const val INTERVAL = 1000L // 1 second
     }
 }
