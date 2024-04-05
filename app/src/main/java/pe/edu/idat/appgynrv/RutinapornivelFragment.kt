@@ -1,6 +1,5 @@
 package pe.edu.idat.appgynrv
 
-
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -20,7 +19,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
 class RutinapornivelFragment : Fragment() {
     private var _binding: FragmentRutinapornivelBinding? = null
     private val binding get() = _binding!!
@@ -31,12 +29,15 @@ class RutinapornivelFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentRutinapornivelBinding.inflate(inflater, container, false)
         val view = binding.root
 
         // Obtener el correo electrónico almacenado en SharedPreferences
-        val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", AppCompatActivity.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("MyPrefs", AppCompatActivity.MODE_PRIVATE)
+
+        // se recibe de EjercicioFragment
         val nombre = sharedPreferences.getString("nombre", "")
 
         // Inicializar Retrofit
@@ -50,9 +51,13 @@ class RutinapornivelFragment : Fragment() {
 
         // Configurar RecyclerView
         adapter = AdapterNivelRutina(emptyList(), requireContext())
+
+        // lista donde se recibiran copias de itemsejercicioderutina con los atributos cambiados por el metodo get
         binding.rvlistaejerciciosR.layoutManager = LinearLayoutManager(context)
         binding.rvlistaejerciciosR.adapter = adapter
-        binding.etnamerutina.text="Nivel " + nombre!!
+
+        // se recibr de EjercicioFragment
+        binding.etnamerutina.text = "Nivel " + nombre!!
 
         binding.btnInicio.setOnClickListener {
             val nombreEjercicio: String
@@ -86,26 +91,38 @@ class RutinapornivelFragment : Fragment() {
             findNavController().navigate(R.id.ejercicioProcesoFragment, args)
         }
 
-        ejerciciosService.obtenerListaEjercicios(nombre).enqueue(object : Callback<List<Ejercicio>> {
-            override fun onResponse(call: Call<List<Ejercicio>>, response: Response<List<Ejercicio>>) {
-                if (response.isSuccessful) {
-                    val listaEjercicios = response.body()
-                    listaEjercicios?.let {
-                        adapter.actualizarLista(it)
+        // Utilizando el metodo get obtenerListaEjercicios segun el nombre de la rutina
+        ejerciciosService.obtenerListaEjercicios(nombre)
+            .enqueue(object : Callback<List<Ejercicio>> {
+                override fun onResponse(
+                    call: Call<List<Ejercicio>>,
+                    response: Response<List<Ejercicio>>
+                ) {
+                    if (response.isSuccessful) {
+                        val listaEjercicios = response.body()
+                        listaEjercicios?.let {
+                            adapter.actualizarLista(it)
+                        }
+                        Log.i("Lista de ejercicio", listaEjercicios.toString())
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            "Error al obtener la lista de ejercicios",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                    Log.i("Lista de ejercicio", listaEjercicios.toString())
-                    Log.i("Url completo", ejerciciosService.obtenerListaEjercicios(nombre).toString())
-                } else {
-                    Toast.makeText(requireContext(), "Error al obtener la lista de ejercicios", Toast.LENGTH_SHORT).show()
                 }
-            }
 
-            override fun onFailure(call: Call<List<Ejercicio>>, t: Throwable) {
-                Toast.makeText(requireContext(), "Error de conexión. Por favor, inténtalo de nuevo más tarde.", Toast.LENGTH_SHORT).show()
-                Log.e("Mensaje de error", t.message.toString())
-                Log.i("Nombre de la Rutina Seleccionada", nombre.toString())
-            }
-        })
+                override fun onFailure(call: Call<List<Ejercicio>>, t: Throwable) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error de conexión. Por favor, inténtalo de nuevo más tarde.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.e("Mensaje de error", t.message.toString())
+                    Log.i("Nombre de la Rutina Seleccionada", nombre.toString())
+                }
+            })
 
         return view
     }

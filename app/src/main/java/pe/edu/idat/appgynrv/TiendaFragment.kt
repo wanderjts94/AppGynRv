@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import pe.edu.idat.appgynrv.Retrofit.models.Tienda.Tienda
 import pe.edu.idat.appgynrv.Retrofit.services.tiendaservice
@@ -20,76 +21,63 @@ class TiendaFragment : Fragment() {
     private var _binding: FragmentTiendaBinding? = null
     private val binding get() = _binding!!
     private lateinit var tiendaService: tiendaservice
-    private var categoria: String = ""
     private lateinit var adapterTienda: AdapterTienda
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTiendaBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val view = binding.root
 
         // Configurar adaptador para RecyclerView de productos
-        adapterTienda = AdapterTienda(mutableListOf(), requireContext())
-        binding.rvProductos.layoutManager = GridLayoutManager(context, 2)
+        adapterTienda = AdapterTienda(emptyList(), requireContext())
+        binding.rvProductos.layoutManager = GridLayoutManager(context, 1)
         binding.rvProductos.adapter = adapterTienda
+
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://localhost:9090/")
+            .baseUrl("http://192.168.1.48:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         // Crear instancia de la interfaz tiendaservice
         tiendaService = retrofit.create(tiendaservice::class.java)
-
-        // Manejar clics en botones para cambiar visibilidad de RecyclerViews y obtener productos
-        binding.btnsuplemento.setOnClickListener {
-            obtenerProductos("Suplementos")
-            Log.i("Datos de ObtenerProductos(Suplementos)", obtenerProductos("Suplementos").toString())
-        }
-
-        binding.btnequipoentre.setOnClickListener {
-            obtenerProductos("Entrenamiento")
-            Log.i("Datos de ObtenerProductos(Entrenamiento)", obtenerProductos("Entrenamiento").toString())
-        }
-
-        binding.btnotros.setOnClickListener {
-            obtenerProductos("Otros")
-            Log.i("Datos de ObtenerProductos(Otros)", obtenerProductos("Otros").toString())
-        }
-    }
-
-    private fun obtenerProductos(categoria: String) {
-        // Llamar al método obtenerListaProductos con la categoría seleccionada
-        val call = tiendaService.obtenerListaProductos(categoria)
-        call.enqueue(object : Callback<List<Tienda>> {
-            override fun onResponse(call: Call<List<Tienda>>, response: Response<List<Tienda>>) {
-                if (response.isSuccessful) {
-                    // La respuesta fue exitosa
-                    val listaProductos = response.body()
-                    if (listaProductos != null) {
-                        // Actualizar la lista de productos en el adaptador
-                        adapterTienda.actualizarProductos(listaProductos)
+        var categoria: String = "Suplementos"
+        tiendaService.obtenerListaProductos(categoria)
+            .enqueue(object : Callback<List<Tienda>> {
+                override fun onResponse(
+                    call: Call<List<Tienda>>,
+                    response: Response<List<Tienda>>
+                ) {
+                    if (response.isSuccessful) {
+                        val listaproductos = response.body()
+                        listaproductos?.let {
+                            // Actualiza el adaptador con la lista de productos obtenida
+                            adapterTienda.actualizarProductos(it)
+                        }
+                        Log.i("Valores de listaproductos", listaproductos.toString())
+                        Log.i("Fragmento",binding.rvProductos.toString())
+                    } else {
+                        Log.e(
+                            "Error en la tienda",
+                            "Error al obtener los productos de la categoria $categoria, lista obtenida: ${response}"
+                        )
                     }
-                } else {
-                    // La respuesta no fue exitosa
-                    Log.e("Response", "Error: ${response.code()}")
                 }
-            }
 
-            override fun onFailure(call: Call<List<Tienda>>, t: Throwable) {
-                // Se produjo un error en la solicitud
-                Log.e("Failure", "Error: ${t.message}")
-            }
-        })
+                override fun onFailure(call: Call<List<Tienda>>, t: Throwable) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error de conexión. Por favor, inténtalo de nuevo más tarde.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.e("Mensaje de error", t.message.toString())
+                }
+            })
+        return view
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

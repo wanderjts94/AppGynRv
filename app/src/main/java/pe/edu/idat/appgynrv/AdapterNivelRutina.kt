@@ -22,6 +22,7 @@ class AdapterNivelRutina(
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        // inicializando itemsejercicioderutina.xml
         val binding = ItemejerciciosderutinaBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
@@ -32,10 +33,15 @@ class AdapterNivelRutina(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(listaEjercicios[position]) {
+
+                // poniendo los atributos de Ejercicio como texto en sus cajas respectivas
                 binding.etnameejercicioQ.text = nombreEjercicio
+
                 binding.etcantejercicio.text = repeticiones.toString()
+
                 // Obtener el identificador del recurso drawable
-                val resourceId = context.resources.getIdentifier(nombreImagen, "drawable", context.packageName)
+                val resourceId =
+                    context.resources.getIdentifier(nombreImagen, "drawable", context.packageName)
 
                 // Cargar la imagen utilizando Glide
                 Glide.with(context)
@@ -60,7 +66,9 @@ class AdapterNivelRutina(
         listaEjercicios = nuevaLista
         notifyDataSetChanged()
     }
-    class VerticalSpaceItemDecoration(private val verticalSpaceHeight: Int) : RecyclerView.ItemDecoration() {
+
+    class VerticalSpaceItemDecoration(private val verticalSpaceHeight: Int) :
+        ItemDecoration() {
         override fun getItemOffsets(
             outRect: Rect, view: View,
             parent: RecyclerView, state: RecyclerView.State

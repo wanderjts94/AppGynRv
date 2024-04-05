@@ -77,48 +77,44 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/black">
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="480dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="700dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProductos"
+                        android:layout_width="0dp"
+                        android:layout_height="576dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageButton
                     android:id="@+id/btncarrito"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="10dp"
                     android:background="@color/primario"
-                    android:layout_alignParentEnd="true"
                     android:contentDescription="@string/btncart"
                     android:src="@drawable/baseline_shopping_cart_24" />
 
 
-
                 <!-- RecyclerView para productos -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvProductos"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone" />
-
-                <!-- RecyclerView para entrenamiento -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvEntrenamiento"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvOtros"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone" />
 
                 <View
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"/>
+                    android:layout_height="30dp" />
 
             </RelativeLayout>
 
