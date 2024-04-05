@@ -42,7 +42,7 @@ class RutinapornivelFragment : Fragment() {
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.48:9090/")
+            .baseUrl("http://192.168.1.3:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -60,9 +60,27 @@ class RutinapornivelFragment : Fragment() {
         binding.etnamerutina.text = "Nivel " + nombre!!
 
         binding.btnInicio.setOnClickListener {
-            // Obtener el nombre del ejercicio y el número de repeticiones
-            val nombreEjercicio = "Flexiones"
-            val numRepeticiones = 10 // Por ejemplo, obtén el número de repeticiones de algún lugar
+            val nombreEjercicio: String
+            val numRepeticiones: Int
+
+            when (nombre) {
+                "Básico" -> {
+                    nombreEjercicio = "Flexiones con Inclinacion"
+                    numRepeticiones = 10
+                }
+                "Medio" -> {
+                    nombreEjercicio = "Flexiones con Inclinacion"
+                    numRepeticiones = 12
+                }
+                "Avanzado" -> {
+                    nombreEjercicio = "Flexiones con Inclinacion"
+                    numRepeticiones = 15
+                }
+                else -> {
+                    nombreEjercicio = ""
+                    numRepeticiones = 0
+                }
+            }
 
             // Crear un Bundle para pasar los argumentos
             val args = Bundle()
