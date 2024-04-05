@@ -23,14 +23,25 @@ class DetalleCompraFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val applicationContext = requireActivity().applicationContext
         val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val data = sharedPreferences.getString("guardardatos", "")
 
         val dataArray = data?.split(",") ?: emptyList()
 
         if (dataArray.size >= 4) {
-            binding.ivimagenproduct.setImageResource(dataArray[0].toInt())
+
+            val resourceId = applicationContext.resources.getIdentifier(
+                dataArray[0],
+                "drawable",
+                applicationContext.packageName
+            )
+            if(resourceId != 0){
+                binding.ivimagenproduct.setImageResource(resourceId)
+            } else {
+                binding.ivimagenproduct.setImageResource(R.drawable.carga)
+            }
+
             binding.etnombreproducto.text = dataArray[1]
             binding.etnunprecio.text = dataArray[2]
             binding.etinfodescript.text = dataArray[3]
@@ -41,7 +52,12 @@ class DetalleCompraFragment : Fragment() {
             val nombreProducto = binding.etnombreproducto.text.toString()
             val precio = binding.etnunprecio.text.toString()
             val cantidad = binding.etnumcantidad.text.toString()
-            val img = dataArray[0].toInt()
+            val resourceId = applicationContext.resources.getIdentifier(
+                dataArray[0],
+                "drawable",
+                applicationContext.packageName
+            )
+            val img = resourceId
 
             val editor = sharedPreferences.edit()
 
