@@ -49,7 +49,7 @@ class InformeFragment : Fragment() {
     private fun configurarRetrofit() {
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.3:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

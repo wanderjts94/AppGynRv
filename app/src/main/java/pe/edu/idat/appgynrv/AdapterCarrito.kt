@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.idat.appgynrv.databinding.ItemcarritotiendaBinding
 
-class AdapterCarrito(val context: Context) : RecyclerView.Adapter<AdapterCarrito.ViewHolder>() {
-    private var listaDeProductos = ArrayList<Datoscarrito>()
+class AdapterCarrito(private val context: Context, private val fragment: CarritoCompraFragment) : RecyclerView.Adapter<AdapterCarrito.ViewHolder>() {
+    var listaDeProductos = ArrayList<Datoscarrito>()
+        private set
 
     inner class ViewHolder(val binding: ItemcarritotiendaBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -57,6 +58,8 @@ class AdapterCarrito(val context: Context) : RecyclerView.Adapter<AdapterCarrito
                         // Actualizar SharedPreferences con los nuevos datos del carrito
                         editor.putString("datosparacarrito", nuevosDatos)
                         editor.apply()
+                        // Recalcular el total después de eliminar un elemento
+                        fragment.calcularTotal()
                     }
                 }
             }
@@ -92,6 +95,9 @@ class AdapterCarrito(val context: Context) : RecyclerView.Adapter<AdapterCarrito
                         // Actualizar SharedPreferences con los nuevos datos del carrito
                         editor.putString("datosparacarrito", nuevosDatos)
                         editor.apply()
+
+                        // Recalcular el total después de editar un elemento
+                        fragment.calcularTotal()
                     }
                 }
             }
@@ -99,9 +105,13 @@ class AdapterCarrito(val context: Context) : RecyclerView.Adapter<AdapterCarrito
     }
 
     // Método para actualizar la lista de productos en el adaptador
+    // Método para actualizar la lista de productos en el adaptador
     fun actualizarProductos(nuevaLista: List<Datoscarrito>) {
         listaDeProductos.clear()
         listaDeProductos.addAll(nuevaLista)
         notifyDataSetChanged()
+
+        // Recalcular el total después de actualizar la lista de productos
+        fragment.calcularTotal()
     }
 }
