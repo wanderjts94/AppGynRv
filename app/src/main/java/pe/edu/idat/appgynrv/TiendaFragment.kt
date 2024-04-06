@@ -17,7 +17,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class TiendaFragment : Fragment() {
+class TiendaFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentTiendaBinding? = null
     private val binding get() = _binding!!
     private lateinit var tiendaService: tiendaservice
@@ -35,16 +35,31 @@ class TiendaFragment : Fragment() {
         binding.rvProductos.layoutManager = GridLayoutManager(context, 1)
         binding.rvProductos.adapter = adapterTienda
 
-
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.48:9090/")
+            .baseUrl("http://192.168.1.43:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
+        binding.btnsuplemento.setOnClickListener(this)
+        binding.btnequipoentre.setOnClickListener(this)
+        binding.btnotros.setOnClickListener(this)
+
         // Crear instancia de la interfaz tiendaservice
         tiendaService = retrofit.create(tiendaservice::class.java)
-        var categoria: String = "Suplementos"
+        getProductosxCategoria("Suplementos")
+        return view
+    }
+
+    override fun onClick(vista: View) {
+        when(vista.id){
+            R.id.btnsuplemento -> getProductosxCategoria("Suplementos")
+            R.id.btnequipoentre -> getProductosxCategoria("Entrenamiento")
+            R.id.btnotros -> getProductosxCategoria("Otros")
+        }
+    }
+
+    fun getProductosxCategoria(categoria: String) {
         tiendaService.obtenerListaProductos(categoria)
             .enqueue(object : Callback<List<Tienda>> {
                 override fun onResponse(
@@ -58,7 +73,7 @@ class TiendaFragment : Fragment() {
                             adapterTienda.actualizarProductos(it)
                         }
                         Log.i("Valores de listaproductos", listaproductos.toString())
-                        Log.i("Fragmento",binding.rvProductos.toString())
+                        Log.i("Fragmento", binding.rvProductos.toString())
                     } else {
                         Log.e(
                             "Error en la tienda",
@@ -68,16 +83,11 @@ class TiendaFragment : Fragment() {
                 }
 
                 override fun onFailure(call: Call<List<Tienda>>, t: Throwable) {
-                    Toast.makeText(
-                        requireContext(),
-                        "Error de conexión. Por favor, inténtalo de nuevo más tarde.",
-                        Toast.LENGTH_SHORT
-                    ).show()
                     Log.e("Mensaje de error", t.message.toString())
                 }
             })
-        return view
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
