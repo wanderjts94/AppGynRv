@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="40dp"
-    app:cardElevation="20dp"
-    app:cardPreventCornerOverlap="true">
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,13 +28,13 @@
             android:id="@+id/etnombreproductosc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="4dp"
             android:text="TextView"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.348"
             app:layout_constraintStart_toEndOf="@+id/ivimagenC"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -107,7 +107,6 @@
 
         <EditText
             android:id="@+id/etnumerocant"
-            android:hint="Cantidad"
             android:layout_width="60dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -115,6 +114,7 @@
             android:layout_marginBottom="8dp"
             android:background="@color/white"
             android:ems="10"
+            android:hint="Cantidad"
             android:inputType="number"
             android:minHeight="48dp"
             android:textAlignment="center"
