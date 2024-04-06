@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.databinding.FragmentCarritoCompraBinding
 
 class CarritoCompraFragment : Fragment() {
+
+
     private var _binding: FragmentCarritoCompraBinding? = null
     private val binding get() = _binding!!
 
@@ -29,7 +31,7 @@ class CarritoCompraFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.rvcarritotien.layoutManager = LinearLayoutManager(context)
-        adapter = AdapterCarrito(requireContext())
+        adapter = AdapterCarrito(requireContext(), this)
         binding.rvcarritotien.adapter = adapter
         binding.btnimgcarritoc.setOnClickListener {
             findNavController().navigate(R.id.tiendaFragment)
@@ -40,6 +42,7 @@ class CarritoCompraFragment : Fragment() {
             editor.remove("datosparacarrito") // Eliminar la entrada "datosparacarrito" de SharedPreferences
             editor.apply() // Aplicar los cambios
             adapter.actualizarProductos(emptyList()) // Limpiar la lista de productos en el adaptador
+            calcularTotal()
         }
         // Obtener y mostrar los productos del carrito
         mostrarProductosEnCarrito()
@@ -55,7 +58,6 @@ class CarritoCompraFragment : Fragment() {
             Log.d("listaproducto", "los productos: $productos")
             val listaDeProductos = mutableListOf<Datoscarrito>()
 
-
             for (productoData in productos) {
                 val dataArray = productoData.split(",")
                 if (dataArray.size >= 4) {
@@ -66,6 +68,20 @@ class CarritoCompraFragment : Fragment() {
             }
             adapter.actualizarProductos(listaDeProductos)
         }
+    }
+
+    // Función para calcular y actualizar el total del carrito
+    fun calcularTotal() {
+        var total = 0.0
+        for (producto in adapter.listaDeProductos) {
+            val precioProducto = producto.precio.toDoubleOrNull()
+            val cantidadProducto = producto.cantidad.toIntOrNull()
+            if (precioProducto != null && cantidadProducto != null) {
+                total += precioProducto * cantidadProducto
+            }
+        }
+        // Actualizar el TextView que muestra el total
+        binding.tvtotpagar.text = total.toString()
     }
 
     override fun onDestroyView() {

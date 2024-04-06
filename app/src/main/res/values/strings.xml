@@ -95,4 +95,7 @@
     <string name="btborra">boton para quitar un item</string>
     <string name="valPrecio">Precio:</string>
     <string name="numval">0.00</string>
+    <string name="valsubtotot">Precio A Pagar:</string>
+    <string name="valtotalf">0.00</string>
+    <string name="valrepe">Repeticiones</string>
 </resources>

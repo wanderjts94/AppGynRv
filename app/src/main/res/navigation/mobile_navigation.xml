@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/informeFragment">
+    app:startDestination="@id/ejercicioFragment">
     <fragment
         android:id="@+id/ejercicioFragment"
         android:name="pe.edu.idat.appgynrv.EjercicioFragment"
@@ -124,11 +124,6 @@
         android:name="pe.edu.idat.appgynrv.HaztePremiumFragment"
         android:label="fragment_hazte_premium"
         tools:layout="@layout/fragment_hazte_premium" />
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="pe.edu.idat.appgynrv.LoginActivity"
-        android:label="fragment_felicidades"
-        tools:layout="@layout/fragment_felicidades" />
     <fragment
         android:id="@+id/realizarPagoFragment"
         android:name="pe.edu.idat.appgynrv.RealizarPagoFragment"
