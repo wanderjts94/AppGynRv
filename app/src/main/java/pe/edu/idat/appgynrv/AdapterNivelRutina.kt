@@ -43,6 +43,12 @@ class AdapterNivelRutina(
                 val resourceId =
                     context.resources.getIdentifier(nombreImagen, "drawable", context.packageName)
 
+                if(resourceId != 0){
+                    binding.imageView.setImageResource(resourceId)
+                } else {
+                    binding.imageView.setImageResource(R.drawable.carga)
+                }
+
                 // Cargar la imagen utilizando Glide
                 Glide.with(context)
                     .load(if (resourceId != 0) resourceId else R.drawable.carga) // Usar el icono por defecto si no se encuentra la imagen
