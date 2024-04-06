@@ -24,7 +24,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+<<<<<<< HEAD
         val baseUrl = "http://192.168.1.43:9090/api/usuarios/"
+=======
+        val baseUrl = "http://192.168.1.10:9090/api/usuarios/"
+>>>>>>> 9c2fc1dc6fe1540bf61ee395bde6d73d8fab825e
 
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
