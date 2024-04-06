@@ -436,12 +436,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="15dp"/>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnVip"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:text="HAZTE PREMIUM"
-                    app:cornerRadius="32dp" />
+
 
                 <View
                     android:layout_width="wrap_content"

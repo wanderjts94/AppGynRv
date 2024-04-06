@@ -24,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val retrofit = Retrofit.Builder()
             .baseUrl("http://192.168.1.43:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())

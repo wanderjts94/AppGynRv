@@ -58,9 +58,9 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:layout_marginTop="0dp"
-            android:src="@drawable/ejerciciosv2" />
+            android:src="@drawable/imginfo2ec" />
 
     </LinearLayout>
 
@@ -124,7 +124,7 @@
                     android:layout_gravity="center"
                     android:layout_height="match_parent"
                     android:layout_marginTop="-0dp"
-                    android:src="@drawable/ima3" />
+                    android:src="@drawable/imginfomusculo2ec" />
 
                 <View
                     android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hombros"
+                        android:text="Erectores Espinales"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -157,7 +157,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Aductores"
+                        android:text="Musculos de la Espalda"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -166,7 +166,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gemelos"
+                        android:text="Musculos del Hombro"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -175,7 +175,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cuadriceps"
+                        android:text="Músculos abdominales"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -184,7 +184,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gluteo"
+                        android:text="Músculos del pecho"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -193,7 +193,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pecho"
+                        android:text="Esternocleidomastoideo"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
