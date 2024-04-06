@@ -24,26 +24,18 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-<<<<<<< HEAD
-        val baseUrl = "http://192.168.1.43:9090/api/usuarios/"
-=======
-        val baseUrl = "http://192.168.1.10:9090/api/usuarios/"
->>>>>>> 9c2fc1dc6fe1540bf61ee395bde6d73d8fab825e
-
         val retrofit = Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl("http://192.168.1.43:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val service = retrofit.create(loginservice::class.java)
 
-        // Set click listener for tvlrecuperacion
         binding.tvlrecuperacion.setOnClickListener {
             val intent = Intent(this, RecuperacionActivity::class.java)
             startActivity(intent)
         }
 
-        // Set click listener for tvlregistro
         binding.tvlregistro.setOnClickListener {
             val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
@@ -66,9 +58,6 @@ class LoginActivity : AppCompatActivity() {
                         val editor = sharedPreferences.edit()
                         editor.putString("correo", correo) // Almacena el correo electrónico
                         editor.apply()
-                        Log.i("Correo Ingresado",correo)
-                        Log.i("Datos de editor", editor.toString())
-                        Log.i("Dats de SharedPreferences", sharedPreferences.toString())
 
                         // Redireccionar a MainActivity
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
@@ -84,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(this@LoginActivity, "Error en la comunicación con el servidor"
                             + t.message, Toast.LENGTH_SHORT).show()
-                    Log.i("Error en el servidor",t.stackTraceToString())
+                    Log.i("Error en el servidor",t.message.toString())
                 }
             })
         }
