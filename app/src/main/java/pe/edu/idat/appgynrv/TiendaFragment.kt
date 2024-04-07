@@ -37,7 +37,7 @@ class TiendaFragment : Fragment(), View.OnClickListener {
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.18.28:9090/")
+            .baseUrl("http://192.168.1.21:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
