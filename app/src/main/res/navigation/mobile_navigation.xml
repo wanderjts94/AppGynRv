@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/calendarioFragment"
-        android:name="pe.edu.idat.appgynrv.Views.CalendarioFragment"
+        android:name="pe.edu.idat.appgynrv.CalendarioFragment"
         android:label="CalendarioFragment" />
     <fragment
         android:id="@+id/felicidadesFragment"
