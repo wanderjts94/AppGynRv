@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Views.WelcomeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,20 +27,20 @@
         </activity>
 
         <activity
-            android:name=".RegistroActivity"
+            android:name=".Views.RegistroActivity"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".RecuperacionActivity"
+            android:name=".Views.RecuperacionActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Views.LoginActivity"
             android:exported="true"/>
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Views.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
 

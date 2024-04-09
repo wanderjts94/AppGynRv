@@ -6,27 +6,27 @@
     app:startDestination="@id/ejercicioFragment">
     <fragment
         android:id="@+id/ejercicioFragment"
-        android:name="pe.edu.idat.appgynrv.EjercicioFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.EjercicioFragment"
         android:label="@string/Ejercicio"
         tools:layout="@layout/fragment_ejercicio" />
     <fragment
         android:id="@+id/informeFragment"
-        android:name="pe.edu.idat.appgynrv.InformeFragment"
+        android:name="pe.edu.idat.appgynrv.Views.InformeFragment"
         android:label="@string/Informe"
         tools:layout="@layout/fragment_informe" />
     <fragment
         android:id="@+id/tiendaFragment"
-        android:name="pe.edu.idat.appgynrv.TiendaFragment"
+        android:name="pe.edu.idat.appgynrv.Views.TiendaFragment"
         android:label="@string/Tienda"
         tools:layout="@layout/fragment_tienda" />
     <fragment
         android:id="@+id/perfilFragment"
-        android:name="pe.edu.idat.appgynrv.PerfilFragment"
+        android:name="pe.edu.idat.appgynrv.Views.PerfilFragment"
         android:label="@string/Perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/infosaltoTFragment"
-        android:name="pe.edu.idat.appgynrv.InfosaltoTFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.InfosaltoTFragment"
         android:label="fragment_infosalto_t"
         tools:layout="@layout/fragment_infosalto_t">
         <action
@@ -39,12 +39,12 @@
     </fragment>
     <fragment
         android:id="@+id/rutinapornivelFragment"
-        android:name="pe.edu.idat.appgynrv.RutinapornivelFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Rutina.RutinapornivelFragment"
         android:label="fragment_rutinapornivel"
         tools:layout="@layout/fragment_rutinapornivel" />
     <fragment
         android:id="@+id/infoEstiraPechoFragment"
-        android:name="pe.edu.idat.appgynrv.InfoEstiraPechoFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.InfoEstiraPechoFragment"
         android:label="fragment_info_estira_pecho"
         tools:layout="@layout/fragment_info_estira_pecho" >
         <action
@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/infoEstiramientoFragment"
-        android:name="pe.edu.idat.appgynrv.InfoEstiramientoFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.InfoEstiramientoFragment"
         android:label="fragment_info_estiramiento"
         tools:layout="@layout/fragment_info_estiramiento" >
         <action
@@ -68,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/infoFlexDFragment"
-        android:name="pe.edu.idat.appgynrv.InfoFlexDFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.InfoFlexDFragment"
         android:label="fragment_info_flex_d"
         tools:layout="@layout/fragment_info_flex_d" >
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/infoFlexIncFragment"
-        android:name="pe.edu.idat.appgynrv.InfoFlexIncFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.InfoFlexIncFragment"
         android:label="fragment_info_flex_inc"
         tools:layout="@layout/fragment_info_flex_inc" >
         <action
@@ -92,41 +92,41 @@
     </fragment>
     <fragment
         android:id="@+id/ejercicioProcesoFragment"
-        android:name="pe.edu.idat.appgynrv.EjercicioProcesoFragment"
+        android:name="pe.edu.idat.appgynrv.Views.Ejercicios.EjercicioProcesoFragment"
         android:label="EjercicioProcesoFragment" />
     <fragment
         android:id="@+id/carritoCompraFragment"
-        android:name="pe.edu.idat.appgynrv.CarritoCompraFragment"
+        android:name="pe.edu.idat.appgynrv.Views.CarritoCompraFragment"
         android:label="fragment_carrito_compra"
         tools:layout="@layout/fragment_carrito_compra" >
     </fragment>
 
     <fragment
         android:id="@+id/detalleCompraFragment"
-        android:name="pe.edu.idat.appgynrv.DetalleCompraFragment"
+        android:name="pe.edu.idat.appgynrv.Views.DetalleCompraFragment"
         android:label="fragment_detalle_compra"
         tools:layout="@layout/fragment_detalle_compra" >
     </fragment>
     <fragment
         android:id="@+id/calendarioFragment"
-        android:name="pe.edu.idat.appgynrv.CalendarioFragment"
+        android:name="pe.edu.idat.appgynrv.Views.CalendarioFragment"
         android:label="CalendarioFragment" />
     <fragment
         android:id="@+id/felicidadesFragment"
-        android:name="pe.edu.idat.appgynrv.FelicidadesFragment"
+        android:name="pe.edu.idat.appgynrv.Views.FelicidadesFragment"
         android:label="FelicidadesFragment" />
     <fragment
         android:id="@+id/preFelicidadesFragment"
-        android:name="pe.edu.idat.appgynrv.PreFelicidadesFragment"
+        android:name="pe.edu.idat.appgynrv.Views.PreFelicidadesFragment"
         android:label="PreFelicidadesFragment" />
     <fragment
         android:id="@+id/haztePremiumFragment"
-        android:name="pe.edu.idat.appgynrv.HaztePremiumFragment"
+        android:name="pe.edu.idat.appgynrv.Views.HaztePremiumFragment"
         android:label="fragment_hazte_premium"
         tools:layout="@layout/fragment_hazte_premium" />
     <fragment
         android:id="@+id/realizarPagoFragment"
-        android:name="pe.edu.idat.appgynrv.RealizarPagoFragment"
+        android:name="pe.edu.idat.appgynrv.Views.RealizarPagoFragment"
         android:label="fragment_realizar_pago"
         tools:layout="@layout/fragment_realizar_pago" />
     <fragment

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/entrenamientoo"
-    tools:context=".InformeFragment">
+    tools:context=".Views.InformeFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-25dp"
-                    android:src="@drawable/IMCv2" />
+                    android:src="@drawable/imcv2" />
 
             </LinearLayout>
         </ScrollView>
