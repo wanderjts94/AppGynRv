@@ -23,7 +23,7 @@ class CalendarioFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var retrofit: Retrofit
     private lateinit var configService: configservice
-    private var count = 0
+    private var lastClickedDay = 0 // Variable para almacenar el último día clickeado
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +34,7 @@ class CalendarioFragment : Fragment() {
 
         // Configuración de Retrofit
         retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.43:9090/api/")
+            .baseUrl("http://192.168.1.10:9090/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -57,8 +57,8 @@ class CalendarioFragment : Fragment() {
                     if (response.isSuccessful) {
                         // Manejar respuesta exitosa
                         Log.i("Mensaje", response.body().toString())
-                        Toast.makeText(requireContext(), "Se ha insertado la configuración correctamente", Toast.LENGTH_SHORT).show()
-                        // Aquí puedes mostrar un mensaje de éxito o realizar alguna acción adicional
+                        Toast.makeText(requireContext(), "Se ha  configuración correctamente", Toast.LENGTH_SHORT).show()
+                        binding.editTextFecha.setText("")
                     } else {
                         // Manejar respuesta no exitosa
                     }
@@ -70,7 +70,6 @@ class CalendarioFragment : Fragment() {
             })
         }
 
-
         return view
     }
 
@@ -79,13 +78,14 @@ class CalendarioFragment : Fragment() {
 
         buttons.forEach { button ->
             button.setOnClickListener {
-                count++
+                lastClickedDay = button.text.toString().toInt() // Almacenar el día del botón clickeado
+                Log.d("LastClickedDay", "El último día clickeado es: $lastClickedDay") // Registro en el Log
                 // Aquí puedes realizar cualquier otra acción que desees cuando se presione un botón
             }
         }
     }
 
     private fun obtenerDiasEntrenamientoSeleccionados(): Int {
-        return count
+        return lastClickedDay // Retornar el último día clickeado
     }
 }
