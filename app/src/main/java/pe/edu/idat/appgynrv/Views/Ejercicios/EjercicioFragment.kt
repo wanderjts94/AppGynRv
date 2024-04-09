@@ -1,12 +1,15 @@
 package pe.edu.idat.appgynrv.Views.Ejercicios
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import pe.edu.idat.appgynrv.CalendarioFragment
 import pe.edu.idat.appgynrv.R
 import pe.edu.idat.appgynrv.Views.Adapters.AdapterRutina
 import pe.edu.idat.appgynrv.Views.Rutina.Rutina
@@ -33,6 +36,12 @@ class EjercicioFragment : Fragment() {
             val navController = it.findNavController()
             navController.navigate(R.id.haztePremiumFragment)
         }
+
+        binding.btnconfiguracion.setOnClickListener{
+            val navController = it.findNavController()
+            navController.navigate(R.id.calendarioFragment)
+        }
+
         return view
     }
 

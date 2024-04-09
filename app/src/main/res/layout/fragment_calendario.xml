@@ -89,7 +89,6 @@
                     android:layout_height="wrap_content"
                     android:text="1"
                     app:cornerRadius="32dp"
-                    android:onClick="toggleButton"
                     android:id="@+id/btn1"/>
 
                 <View
@@ -101,7 +100,6 @@
                     android:layout_height="wrap_content"
                     android:text="2"
                     app:cornerRadius="32dp"
-                    android:onClick="toggleButton"
                     android:id="@+id/btn2"/>
 
                 <View
@@ -113,7 +111,6 @@
                     android:layout_height="wrap_content"
                     android:text="3"
                     app:cornerRadius="32dp"
-                    android:onClick="toggleButton"
                     android:id="@+id/btn3"/>
 
                 <View
@@ -124,7 +121,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4"
-                    android:onClick="toggleButton"
                     app:cornerRadius="32dp"
                     android:id="@+id/btn4"/>
 
@@ -141,7 +137,6 @@
                     android:layout_height="wrap_content"
                     android:text="5"
                     app:cornerRadius="32dp"
-                    android:onClick="toggleButton"
                     android:id="@+id/btn5"/>
 
                 <View
@@ -152,7 +147,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6"
-                    android:onClick="toggleButton"
                     app:cornerRadius="32dp"
                     android:id="@+id/btn6"/>
 
@@ -164,7 +158,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7"
-                    android:onClick="toggleButton"
                     app:cornerRadius="32dp"
                     android:id="@+id/btn7"/>
 
