@@ -134,8 +134,8 @@
                     android:id="@+id/imageViewEstado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/imc_grafico"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginTop="-25dp"
+                    android:src="@drawable/IMCv2" />
 
             </LinearLayout>
         </ScrollView>

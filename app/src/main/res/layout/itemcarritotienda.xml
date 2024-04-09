@@ -6,35 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="40dp"
-    app:cardElevation="20dp"
-    app:cardPreventCornerOverlap="true">
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#918C8C">
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/ivimagenC"
             android:layout_width="100dp"
             android:layout_height="120dp"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/etnombreproductosc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:text="TextView"
+            android:layout_marginTop="4dp"
+            android:text="Product Name"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:fontFamily="sans-serif"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.348"
             app:layout_constraintStart_toEndOf="@+id/ivimagenC"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,10 +45,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:fontFamily="sans-serif"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/etnombreproductosc" />
@@ -61,6 +64,7 @@
             android:text="@string/textcant"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:fontFamily="sans-serif"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivimagenC"
@@ -71,7 +75,7 @@
             android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="20dp"
             android:background="@color/primario"
             android:contentDescription="@string/ivimagen"
@@ -102,12 +106,12 @@
             android:text="@string/valPrecio"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:fontFamily="sans-serif"
             app:layout_constraintStart_toEndOf="@+id/ivimagenC"
             app:layout_constraintTop_toBottomOf="@+id/etnombreproductosc" />
 
         <EditText
             android:id="@+id/etnumerocant"
-            android:hint="Cantidad"
             android:layout_width="60dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -115,6 +119,7 @@
             android:layout_marginBottom="8dp"
             android:background="@color/white"
             android:ems="10"
+            android:hint="Cantidad"
             android:inputType="number"
             android:minHeight="48dp"
             android:textAlignment="center"
@@ -122,6 +127,10 @@
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/etprecio"
             tools:ignore="TouchTargetSizeCheck"
-            tools:text="@string/numval" />
+            tools:text="@string/numval"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

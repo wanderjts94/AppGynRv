@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import pe.edu.idat.appgynrv.R
 import pe.edu.idat.appgynrv.Retrofit.models.Tienda.Tienda
@@ -38,7 +39,7 @@ class TiendaFragment : Fragment(), View.OnClickListener {
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.43:9090/")
+            .baseUrl("http://192.168.1.21:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -46,6 +47,9 @@ class TiendaFragment : Fragment(), View.OnClickListener {
         binding.btnequipoentre.setOnClickListener(this)
         binding.btnotros.setOnClickListener(this)
 
+        binding.btncarrito.setOnClickListener{
+            findNavController().navigate(R.id.carritoCompraFragment)
+        }
         // Crear instancia de la interfaz tiendaservice
         tiendaService = retrofit.create(tiendaservice::class.java)
         getProductosxCategoria("Suplementos")

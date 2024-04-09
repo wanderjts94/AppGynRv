@@ -89,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:text="1"
                     app:cornerRadius="32dp"
+                    android:onClick="toggleButton"
                     android:id="@+id/btn1"/>
 
                 <View
@@ -100,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:text="2"
                     app:cornerRadius="32dp"
+                    android:onClick="toggleButton"
                     android:id="@+id/btn2"/>
 
                 <View
@@ -111,6 +113,7 @@
                     android:layout_height="wrap_content"
                     android:text="3"
                     app:cornerRadius="32dp"
+                    android:onClick="toggleButton"
                     android:id="@+id/btn3"/>
 
                 <View
@@ -121,6 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4"
+                    android:onClick="toggleButton"
                     app:cornerRadius="32dp"
                     android:id="@+id/btn4"/>
 
@@ -137,6 +141,7 @@
                     android:layout_height="wrap_content"
                     android:text="5"
                     app:cornerRadius="32dp"
+                    android:onClick="toggleButton"
                     android:id="@+id/btn5"/>
 
                 <View
@@ -147,6 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6"
+                    android:onClick="toggleButton"
                     app:cornerRadius="32dp"
                     android:id="@+id/btn6"/>
 
@@ -158,6 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7"
+                    android:onClick="toggleButton"
                     app:cornerRadius="32dp"
                     android:id="@+id/btn7"/>
 
@@ -177,19 +184,21 @@
                 android:textStyle="bold" />
 
             <!-- Spinner para seleccionar el primer día de la semana -->
-            <Spinner
-                android:id="@+id/spinnerFirstDayOfWeek"
+            <EditText
+                android:id="@+id/editTextFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:popupBackground="@color/white"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:clipToOutline="true"
                 android:gravity="center_vertical"
-                android:clipToOutline="true" />
+                android:hint="Ingresa una fecha (yyyy-mm-dd)"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <View
                 android:layout_width="wrap_content"
@@ -211,3 +220,4 @@
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
+

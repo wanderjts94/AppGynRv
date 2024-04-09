@@ -58,9 +58,9 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:layout_marginTop="0dp"
-            android:src="@drawable/ejerciciosv2" />
+            android:src="@drawable/imginfo4fi" />
 
     </LinearLayout>
 
@@ -122,9 +122,9 @@
                     android:id="@+id/imageView2"
                     android:layout_width="300dp"
                     android:layout_gravity="center"
-                    android:layout_height="match_parent"
+                    android:layout_height="250dp"
                     android:layout_marginTop="-0dp"
-                    android:src="@drawable/ima3" />
+                    android:src="@drawable/imginfomusculo4fi" />
 
                 <View
                     android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hombros"
+                        android:text="Pectoral mayor"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -157,7 +157,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Aductores"
+                        android:text="Deltoides anterior"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -166,7 +166,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gemelos"
+                        android:text="Tríceps braquial"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -175,7 +175,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cuadriceps"
+                        android:text="Serrato anterior"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -184,7 +184,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gluteo"
+                        android:text="Músculos del core"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
@@ -193,7 +193,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pecho"
+                        android:text="Músculos estabilizadores(Hombro)"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:gravity="start|end"
