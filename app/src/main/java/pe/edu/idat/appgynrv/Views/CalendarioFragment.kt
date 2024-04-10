@@ -34,7 +34,7 @@ class CalendarioFragment : Fragment() {
 
         // Configuración de Retrofit
         retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/api/")
+            .baseUrl("http://192.168.1.43:9090/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -57,7 +57,7 @@ class CalendarioFragment : Fragment() {
                     if (response.isSuccessful) {
                         // Manejar respuesta exitosa
                         Log.i("Mensaje", response.body().toString())
-                        Toast.makeText(requireContext(), "Se ha  configuración correctamente", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Se ha creado la configuración correctamente", Toast.LENGTH_SHORT).show()
                         binding.editTextFecha.setText("")
                     } else {
                         // Manejar respuesta no exitosa

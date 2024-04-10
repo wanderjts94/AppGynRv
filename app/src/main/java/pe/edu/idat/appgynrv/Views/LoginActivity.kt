@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.43:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -41,7 +41,6 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
-
         binding.btnlogin.setOnClickListener {
             val correo = binding.etcorreo.text.toString()
             val password = binding.etpassword.text.toString()

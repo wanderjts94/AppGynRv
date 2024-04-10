@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import pe.edu.idat.appgynrv.R
 import pe.edu.idat.appgynrv.databinding.FragmentRealizarPagoBinding
 
@@ -24,6 +25,9 @@ class RealizarPagoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val opcionesPago= resources.getStringArray(R.array.opciones_pago)
+        val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", AppCompatActivity.MODE_PRIVATE)
+        val total = sharedPreferences.getString("total", "")
+        binding.tvmontototal.text = total
 
         val adapter= ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item,opcionesPago)
 

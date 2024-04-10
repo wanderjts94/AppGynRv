@@ -44,7 +44,7 @@ class RutinapornivelFragment : Fragment() {
 
         // Inicializar Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/")
+            .baseUrl("http://192.168.1.43:9090/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

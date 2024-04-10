@@ -26,7 +26,7 @@ class RegistroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val baseUrl = "http://192.168.1.10:9090/api/usuarios/"
+        val baseUrl = "http://192.168.1.43:9090/api/usuarios/"
 
         Log.i("Url de la api","Esta es la url de la API: " + baseUrl)
 
