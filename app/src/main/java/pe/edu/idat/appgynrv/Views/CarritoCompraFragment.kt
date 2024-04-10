@@ -1,19 +1,21 @@
 package pe.edu.idat.appgynrv.Views
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.idat.appgynrv.R
 import pe.edu.idat.appgynrv.Retrofit.models.Detalle.detalleRequest
 import pe.edu.idat.appgynrv.Retrofit.models.Detalle.detalleResponse
 import pe.edu.idat.appgynrv.Retrofit.services.detalleService
-import pe.edu.idat.appgynrv.Retrofit.services.pefilservice
 import pe.edu.idat.appgynrv.Views.Adapters.AdapterCarrito
 import pe.edu.idat.appgynrv.databinding.FragmentCarritoCompraBinding
 import retrofit2.Call
@@ -58,10 +60,16 @@ class CarritoCompraFragment : Fragment() {
         binding.btnimgcarritoc.setOnClickListener {
             findNavController().navigate(R.id.tiendaFragment)
         }
+
         binding.btnpagar.setOnClickListener {
             val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
             val datosCarrito = sharedPreferences.getString("datosparacarrito", "")
             val correo = sharedPreferences.getString("correo", "")
+            val editor = sharedPreferences.edit()
+            val total = binding.tvtotpagar.text.toString()
+            editor.putString("total", total)
+            editor.apply()
+
 
             if (!datosCarrito.isNullOrEmpty()) {
                 val productos = datosCarrito.split(";")
@@ -80,6 +88,8 @@ class CarritoCompraFragment : Fragment() {
                 editor.apply() // Aplicar los cambios
                 adapter.actualizarProductos(emptyList()) // Limpiar la lista de productos en el adaptador
                 calcularTotal()
+                val navController = it.findNavController()
+                navController.navigate(R.id.realizarPagoFragment)
             }
         }
         mostrarProductosEnCarrito()

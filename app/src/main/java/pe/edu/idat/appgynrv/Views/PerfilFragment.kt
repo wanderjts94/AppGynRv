@@ -1,5 +1,6 @@
 package pe.edu.idat.appgynrv.Views
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -27,7 +28,7 @@ class PerfilFragment : Fragment() {
     init {
         // Configuración de Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.10:9090/api/usuarios/")
+            .baseUrl("http://192.168.1.43:9090/api/usuarios/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -58,6 +59,11 @@ class PerfilFragment : Fragment() {
         binding.btnGuardar.setOnClickListener {
             val correo = binding.etCorreo.text.toString()
             actualizarPerfil(correo)
+        }
+
+        binding.tvlcerrar.setOnClickListener{
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         // Devolver la vista raíz del fragmento
