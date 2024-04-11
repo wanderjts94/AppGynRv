@@ -13,6 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.regex.Pattern
 
 class RecuperacionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecuperacionBinding
@@ -42,9 +43,12 @@ class RecuperacionActivity : AppCompatActivity() {
             val nuevaContra = binding.etnuevcontra.text.toString()
             val palabraClave = binding.etpalabra.text.toString()
 
-            val request = putRecuperarRequest(correo, nuevaContra, palabraClave)
-
-            cambiarPassword(request)
+            if (validatePassword(nuevaContra)) {
+                val request = putRecuperarRequest(correo, nuevaContra, palabraClave)
+                cambiarPassword(request)
+            } else {
+                Toast.makeText(this@RecuperacionActivity, "Contraseña no válida", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -81,5 +85,12 @@ class RecuperacionActivity : AppCompatActivity() {
                 val palabra = binding.etnuevcontra.text?.toString() ?: ""
             }
         })
+    }
+
+    private fun validatePassword(password: String): Boolean {
+        val pattern = Pattern.compile(
+            "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,12}$"
+        )
+        return pattern.matcher(password).matches()
     }
 }
